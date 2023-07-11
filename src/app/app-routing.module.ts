@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: "home", component: PageHomeComponent },
   { path: "my-plants", component: PageMyPlantsComponent },
   { path: "admin", component: PageAdminComponent},
-  { path: "not-found", component: PageNotFoundComponent}
+  { path: "**", component: PageNotFoundComponent}
 ];
 
 @NgModule({
