@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Plant } from 'src/app/models/plant';
 
 @Component({
   selector: 'app-plant-list',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./plant-list.component.css']
 })
 export class PlantListComponent {
+
+  @Input()
+  item: Plant[] = [];
 
 }
