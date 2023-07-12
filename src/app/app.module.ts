@@ -10,6 +10,8 @@ import { PageMyPlantsComponent } from './pages/page-my-plants/page-my-plants.com
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 import { PlantListComponent } from './components/plant-list/plant-list.component';
+import { CardComponent } from './components/card/card.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { PlantListComponent } from './components/plant-list/plant-list.component
     PageMyPlantsComponent,
     PageNotFoundComponent,
     PageAdminComponent,
-    PlantListComponent
+    PlantListComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

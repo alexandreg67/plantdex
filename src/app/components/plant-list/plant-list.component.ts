@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Plant } from 'src/app/models/plant';
 
 @Component({
@@ -9,6 +9,6 @@ import { Plant } from 'src/app/models/plant';
 export class PlantListComponent {
 
   @Input()
-  item: Plant[] = [];
+  plants!: Plant[];
 
 }

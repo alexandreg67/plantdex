@@ -9,7 +9,7 @@ import { PlantService } from 'src/app/services/plant.service';
 })
 export class PageHomeComponent implements OnInit{
 
-  plantsToDisplay: Plant[] = [];
+  plantsToDisplay!: Plant[];
 
   constructor(private plantService: PlantService) {}
 

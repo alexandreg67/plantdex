@@ -1,8 +1,8 @@
 <div class="container">
     <h1 class="title">Plantdex</h1>
     <div class="container-plants">
-        <ul>
-            <li *ngFor="let plant of item">{{ plant.nom }}</li>
-        </ul>
+
+        <app-card *ngFor="let plant of plants" [planteAEnvoyer]="plant"></app-card>
+
     </div>
 </div>
