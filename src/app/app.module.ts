@@ -11,6 +11,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 import { PlantListComponent } from './components/plant-list/plant-list.component';
 import { CardComponent } from './components/card/card.component';
+import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,12 +24,14 @@ import { CardComponent } from './components/card/card.component';
     PageNotFoundComponent,
     PageAdminComponent,
     PlantListComponent,
-    CardComponent
+    CardComponent,
+    FilterBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

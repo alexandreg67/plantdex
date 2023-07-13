@@ -10,6 +10,7 @@ import { PlantService } from 'src/app/services/plant.service';
 export class PageHomeComponent implements OnInit{
 
   plantsToDisplay!: Plant[];
+  categories!: string[];
 
   constructor(private plantService: PlantService) {}
 
@@ -23,11 +24,14 @@ export class PageHomeComponent implements OnInit{
 
     const notreFluxDonnees = this.plantService.getPlants();
     notreFluxDonnees.subscribe((data: Plant[]) => {
-      console.log('mes données après call api : ', data);
+      // console.log('mes données après call api : ', data);
 
       this.plantsToDisplay = data;
-      
+
+    
+      this.categories = [... new Set(this.plantsToDisplay.map(e => e.categorie))];    
     });
+
     
 
   }
