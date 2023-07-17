@@ -1,19 +1,20 @@
-<ul class="nav flex-column px-2 ">
-    <div class="filter-container">
-        <div class="filtre">
-            <h2>Filtres</h2>
-        </div>
-        <div class="categories" >
-            <h2>Catégories</h2>
-            <fieldset>           
-                <ul>
-                    <li *ngFor="let item of categoriesRecu;let i = index" >
-                        <input id='{{ item.split(" ").join("") }}'  type="checkbox" [checked]="checkboxValues[i]" (change)="onCheckboxChange(i)"> 
-                        <label for='{{ item.split(" ").join("") }}' (change)="onCheckboxChange(i)" >{{ item }}
-                        </label>
-                    </li>
-                </ul>
-            </fieldset>
-        </div>
+<div class="card me-5" style="width: 18rem;">
+    <div class="card-header">
+        <h2>Filtres</h2>
     </div>
-</ul>
+    <div class="form-check">
+        <h3>Catégories</h3>
+        <li class="list-group-item" *ngFor="let item of categoriesRecu">
+            <input class="form-check-input" id='{{ item }}' type="checkbox" (change)="addNewItem(item)" value="{{ item }}">
+            <label class="form-check-label" for='{{ item }}'>{{ item }}</label>
+        </li>
+    </div>
+    <div class="form-check">
+        <li class="list-group-item">A second item</li>
+    </div>
+    <div class="form-check">
+        <li class="list-group-item">A third item</li>
+    </div>
+</div>
+        
+

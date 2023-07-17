@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormArray, FormControl, FormGroup } from '@angular/forms';
 
 
@@ -12,8 +12,7 @@ export class FilterBarComponent implements OnInit {
   @Input()
   categoriesRecu!: string[];
 
-  checkboxValues: boolean[] = []
-
+  @Output() newItemEvent = new EventEmitter<string>();
 
   constructor() {
   }
@@ -22,13 +21,11 @@ export class FilterBarComponent implements OnInit {
 
   }
 
-  onCheckboxChange(index: number) {
-  this.checkboxValues[index] = !this.checkboxValues[index];
-  console.log(this.checkboxValues[index]);
-  console.log(this.categoriesRecu[index]);
+
+  addNewItem(value: string) {
+    this.newItemEvent.emit(value);
+    // console.log('la valeur emit : ', value);
   }
-
-
 
 }
 

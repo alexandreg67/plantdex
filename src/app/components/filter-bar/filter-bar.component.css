@@ -1,31 +1,13 @@
-h2 {
-    /* width: 100%; */
-    /* border-bottom: 1px solid rgb(223, 223, 223); */
-    font-size: 1.2rem;
-    margin: 10px ;
-}
-
-.filter-container {
-    width: 250px;
-}
-
-.categories {
-    border: solid 1px rgb(226, 226, 226);
-}
-
-.filtre {
-    border: solid 1px rgb(226, 226, 226);
-}
-
-ul {
-    margin: 0;
-    padding: 0;
+input {
+    margin-right: 10px;
 }
 
 li {
-    list-style-type: none;
+    padding: 10px;
 }
 
-input {
-    margin: 10px 10px;
+h3 {
+    font-size: 1.2rem;
+    padding-left: 10px;
+    padding-top: 10px;
 }

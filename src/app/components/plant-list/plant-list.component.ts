@@ -10,6 +10,7 @@ export class PlantListComponent {
 
   @Input()
   plants!: Plant[];
+  categorieFiltre!:string[]
 
   ngOniti() {
     
