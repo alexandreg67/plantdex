@@ -11,3 +11,7 @@ h3 {
     padding-left: 10px;
     padding-top: 10px;
 }
+
+.inputDisplay {
+    display: none;
+}

@@ -13,6 +13,7 @@ import { PlantListComponent } from './components/plant-list/plant-list.component
 import { CardComponent } from './components/card/card.component';
 import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
 import { FormsModule } from '@angular/forms';
+import { FilterPlantsPipe } from './filter-plants.pipe';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     PageAdminComponent,
     PlantListComponent,
     CardComponent,
-    FilterBarComponent
+    FilterBarComponent,
+    FilterPlantsPipe
   ],
   imports: [
     BrowserModule,

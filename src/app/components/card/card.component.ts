@@ -9,6 +9,8 @@ import { Plant } from 'src/app/models/plant';
 export class CardComponent {
   @Input() 
   planteAEnvoyer!:Plant;
+
+  
 }
 
 

@@ -1,8 +1,19 @@
-<div *ngIf="planteAEnvoyer" class="card mb-5" style="width: 18rem;height: 480px;">
+<div *ngIf="planteAEnvoyer" class="card" style="width: 18rem;height: 480px;">
     <img class="card-img-top" src='{{ planteAEnvoyer.image }}' alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title">{{ planteAEnvoyer.nom }}</h5>
         <p class="card-text">{{ planteAEnvoyer.categorie }}</p>
-        <a href="#" class="btn btn-primary">Détails</a>
+        <div class="container-goutte-eau">
+
+            <img *ngIf="planteAEnvoyer.arrosage >= 1" src="../../../assets/goutte-deau.png" style="height: 20px;">
+            <img *ngIf="planteAEnvoyer.arrosage < 1" src="../../../assets/goutte-de-sang.png" style="height: 25px;">
+            
+            <img *ngIf="planteAEnvoyer.arrosage >= 2" src="../../../assets/goutte-deau.png" style="height: 20px;">
+            <img *ngIf="planteAEnvoyer.arrosage < 2" src="../../../assets/goutte-de-sang.png" style="height: 25px;">
+
+            <img *ngIf="planteAEnvoyer.arrosage >= 3" src="../../../assets/goutte-deau.png" style="height: 20px;">
+            <img *ngIf="planteAEnvoyer.arrosage < 3" src="../../../assets/goutte-de-sang.png" style="height: 25px;">
+
+        </div>
     </div>
 </div>
