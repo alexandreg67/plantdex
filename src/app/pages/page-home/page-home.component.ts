@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Plant } from 'src/app/models/plant';
 import { PlantService } from 'src/app/services/plant.service';
 
@@ -10,14 +10,13 @@ import { PlantService } from 'src/app/services/plant.service';
 export class PageHomeComponent implements OnInit{
 
   plantsToDisplay!: Plant[];
-  categories!: string[];
-  categorieFiltre: string[] = [] ;
   plantsToDisplayFilter!: Plant[];
   plantsToDisplayFilterGoutte!: Plant[];
+  categories!: string[];
+  categorieFiltre: string[] = [];
+  tabNbrDeGouttes: number[] = [];
 
-  statusCheckbox!: boolean;
-
-  nombreDeGouttes:number = 0
+  nombreDeGouttes!:number[]
 
 
   constructor(private plantService: PlantService) {}
@@ -34,6 +33,9 @@ export class PageHomeComponent implements OnInit{
       this.plantsToDisplay = data;
       this.plantsToDisplayFilter = [...this.plantsToDisplay];
       this.categories = [... new Set(this.plantsToDisplay.map(e => e.categorie))]; 
+      this.nombreDeGouttes = [... new Set(this.plantsToDisplay.map(e => e.arrosage).sort())]
+      console.log(this.nombreDeGouttes);
+      
     });
 
   }
@@ -43,41 +45,34 @@ export class PageHomeComponent implements OnInit{
     }else {
       this.categorieFiltre.push(newCategorie)
     }
-
-    if (this.categorieFiltre.length !== 0) {         
-        if (!this.statusCheckbox) {
-          this.plantsToDisplayFilter = this.plantsToDisplay
-            .filter(e => this.categorieFiltre
-            .includes(e.categorie))
-            .filter(e => this.nombreDeGouttes === e.arrosage)
-        }else {
-          this.plantsToDisplayFilter = this.plantsToDisplay
-            .filter(e => this.categorieFiltre
-            .includes(e.categorie))
-        }
-    } else {
-      this.plantsToDisplayFilter = this.plantsToDisplay.filter(e => this.nombreDeGouttes === e.arrosage);
-    }  
-
+    this.filterAllPlants()
   }
 
-  addNomreDeGoutte(nbrDeGoutte:number) {
-    this.nombreDeGouttes = nbrDeGoutte;   
-    if (!this.statusCheckbox) {
-      this.plantsToDisplayFilterGoutte = this.plantsToDisplay.filter(e => this.nombreDeGouttes === e.arrosage)
-      if (this.categorieFiltre.length != 0) {
-        this.plantsToDisplayFilter = this.plantsToDisplayFilterGoutte.filter(e => this.categorieFiltre.includes(e.categorie))
-      }else {
-        this.plantsToDisplayFilter = this.plantsToDisplayFilterGoutte
-      }
+  addNomreDeGoutte(nbrDeGoutte:number) {  
+    if (this.tabNbrDeGouttes.includes(nbrDeGoutte)) {
+      this.tabNbrDeGouttes = this.tabNbrDeGouttes.filter(e => e != nbrDeGoutte)
+    }else {
+      this.tabNbrDeGouttes.push(nbrDeGoutte)
     }
-
+    this.filterAllPlants()
   }
 
-  addStatusCheckSansfiltre(status:boolean) {
-    this.statusCheckbox = status;
-    if (status) {
-      this.plantsToDisplayFilter = this.plantsToDisplay;
+  filterAllPlants() {
+    if (this.categorieFiltre.length != 0 && this.tabNbrDeGouttes.length !=0) {  
+      this.plantsToDisplayFilter = this.plantsToDisplay
+        .filter(e => this.categorieFiltre
+        .includes(e.categorie))
+        .filter(e => this.tabNbrDeGouttes.includes(e.arrosage))       
+    } else if (this.categorieFiltre.length == 0 && this.tabNbrDeGouttes.length !=0) {
+      this.plantsToDisplayFilter = this.plantsToDisplay
+        .filter(e => this.tabNbrDeGouttes
+        .includes(e.arrosage));
+    } else if (this.categorieFiltre.length != 0 && this.tabNbrDeGouttes.length ==0) {
+      this.plantsToDisplayFilter = this.plantsToDisplay
+        .filter(e => this.categorieFiltre
+        .includes(e.categorie))
+    } else if (this.categorieFiltre.length == 0 && this.tabNbrDeGouttes.length == 0) {
+      this.plantsToDisplayFilter = this.plantsToDisplay
     }
   }
 

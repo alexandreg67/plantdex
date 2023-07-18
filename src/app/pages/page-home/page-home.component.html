@@ -1,9 +1,9 @@
 <div class="container-plants">
     <app-filter-bar 
         [categoriesRecu]="categories" 
+        [nombreDeGouttesRecu]="nombreDeGouttes"
         (newItemEvent)="addCategories($event)" 
         (newGoutteEvent)="addNomreDeGoutte($event)"
-        (newSansFiltreEvent)="addStatusCheckSansfiltre($event)"
         ></app-filter-bar>
     <app-plant-list [plants]="plantsToDisplayFilter"></app-plant-list>
 
