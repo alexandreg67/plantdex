@@ -9,71 +9,89 @@ import { PlantService } from 'src/app/services/plant.service';
 })
 export class PageHomeComponent implements OnInit{
 
+
   plantsToDisplay!: Plant[];
   plantsToDisplayFilter!: Plant[];
-  plantsToDisplayFilterGoutte!: Plant[];
-  categories!: string[];
-  categorieFiltre: string[] = [];
-  tabNbrDeGouttes: number[] = [];
 
-  nombreDeGouttes!:number[]
+  categories: string[] = [];
+  tabCategoriesFilter: string[] = [];
 
+  nombreDeGouttes: number[] = [];
+  tabNombreDeGouttesFilter: number[] = []
+
+  tabEtatMeteo: string[] = [];
+  tabEtatMeteoFilter:string[] = [];
+
+  userInput!:string;
+  categoriesChecked!: string[];
 
   constructor(private plantService: PlantService) {}
 
   ngOnInit(): void {
-    // this.plantService.getPlants().subscribe((plants: Plant[]) => {
-    //   this.plantsToDisplay = plants;
-    //   console.log(this.plantsToDisplay);
-    // })
       const notreFluxDonnees = this.plantService.getPlants();
       notreFluxDonnees.subscribe((data: Plant[]) => {
-      console.log('mes données après call api : ', data);
 
       this.plantsToDisplay = data;
       this.plantsToDisplayFilter = [...this.plantsToDisplay];
       this.categories = [... new Set(this.plantsToDisplay.map(e => e.categorie))]; 
-      this.nombreDeGouttes = [... new Set(this.plantsToDisplay.map(e => e.arrosage).sort())]
-      console.log(this.nombreDeGouttes);
-      
+      this.nombreDeGouttes = [... new Set(this.plantsToDisplay.map(e => e.arrosage).sort())];
+      this.tabEtatMeteo = [... new Set(this.plantsToDisplay.map(e => e.soleil))] 
+      this.tabCategoriesFilter = this.categories;
+      this.tabNombreDeGouttesFilter = this.nombreDeGouttes;
+      this.tabEtatMeteoFilter = this.tabEtatMeteo;
+
     });
 
   }
-  addCategories(newCategorie: string) {
-    if (this.categorieFiltre.includes(newCategorie)) {
-      this.categorieFiltre = this.categorieFiltre.filter(e => e != newCategorie)
+  
+  selectCategorie(categorie:string) {
+    if (this.tabCategoriesFilter.includes(categorie)) {
+      this.tabCategoriesFilter = this.tabCategoriesFilter.filter(e => e != categorie)
     }else {
-      this.categorieFiltre.push(newCategorie)
+      this.tabCategoriesFilter.push(categorie)
     }
-    this.filterAllPlants()
+    this.onUserInteractionFiltre()
   }
 
-  addNomreDeGoutte(nbrDeGoutte:number) {  
-    if (this.tabNbrDeGouttes.includes(nbrDeGoutte)) {
-      this.tabNbrDeGouttes = this.tabNbrDeGouttes.filter(e => e != nbrDeGoutte)
+  selectSoleil(soleil:string) {
+    if (this.tabEtatMeteoFilter.includes(soleil)) {
+      this.tabEtatMeteoFilter = this.tabEtatMeteoFilter.filter(e => e != soleil)
     }else {
-      this.tabNbrDeGouttes.push(nbrDeGoutte)
+      this.tabEtatMeteoFilter.push(soleil)
     }
-    this.filterAllPlants()
+    this.onUserInteractionFiltre()
   }
 
-  filterAllPlants() {
-    if (this.categorieFiltre.length != 0 && this.tabNbrDeGouttes.length !=0) {  
-      this.plantsToDisplayFilter = this.plantsToDisplay
-        .filter(e => this.categorieFiltre
-        .includes(e.categorie))
-        .filter(e => this.tabNbrDeGouttes.includes(e.arrosage))       
-    } else if (this.categorieFiltre.length == 0 && this.tabNbrDeGouttes.length !=0) {
-      this.plantsToDisplayFilter = this.plantsToDisplay
-        .filter(e => this.tabNbrDeGouttes
-        .includes(e.arrosage));
-    } else if (this.categorieFiltre.length != 0 && this.tabNbrDeGouttes.length ==0) {
-      this.plantsToDisplayFilter = this.plantsToDisplay
-        .filter(e => this.categorieFiltre
-        .includes(e.categorie))
-    } else if (this.categorieFiltre.length == 0 && this.tabNbrDeGouttes.length == 0) {
-      this.plantsToDisplayFilter = this.plantsToDisplay
+  selectGouttes(gouttes:number) {
+    if (this.tabNombreDeGouttesFilter.includes(gouttes)) {
+      this.tabNombreDeGouttesFilter = this.tabNombreDeGouttesFilter.filter(e => e != gouttes)
+    }else {
+      this.tabNombreDeGouttesFilter.push(gouttes)
     }
+    this.onUserInteractionFiltre()
+  }
+
+  onEnterSearch(resultUserSearch:string){
+    this.userInput = resultUserSearch;
+    this.onUserInteractionFiltre()
+  }
+
+  onUserInteractionFiltre() {
+    this.plantsToDisplayFilter = [...this.plantsToDisplay]
+    
+    if(this.userInput) {
+      this.plantsToDisplayFilter = this.plantsToDisplayFilter.filter((plant) => plant.nom.toLocaleLowerCase().includes(this.userInput.toLocaleLowerCase()))
+    }
+    if(this.tabNombreDeGouttesFilter.length < 4) {
+      this.plantsToDisplayFilter = this.plantsToDisplayFilter.filter((plant) => !this.tabNombreDeGouttesFilter.includes(plant.arrosage))
+    }
+    if(this.tabCategoriesFilter.length < 6) {
+      this.plantsToDisplayFilter = this.plantsToDisplayFilter.filter((plant) => !this.tabCategoriesFilter.includes(plant.categorie))
+    }
+    if(this.tabEtatMeteoFilter.length < 3) {
+      this.plantsToDisplayFilter = this.plantsToDisplayFilter.filter((plant) => !this.tabEtatMeteoFilter.includes(plant.soleil))
+    }
+
   }
 
 }

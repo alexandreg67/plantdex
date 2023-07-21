@@ -1,0 +1,9 @@
+<div class="container-fluid mb-2">
+    <label style="display: none;" for="exampleFormControlInput1" class="form-label">Search bar</label>
+    <input 
+        #search 
+        (input)="inputUser.emit(search.value)" 
+        type="email" class="form-control" 
+        id="exampleFormControlInput1"
+        placeholder="Entrer votre recherche">
+</div>

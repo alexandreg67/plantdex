@@ -1,0 +1,17 @@
+.container-tri {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.container-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    margin: 5px 10px;
+}

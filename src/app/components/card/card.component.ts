@@ -7,8 +7,7 @@ import { Plant } from 'src/app/models/plant';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  @Input() 
-  planteAEnvoyer!:Plant;
+  @Input() planteAEnvoyer!:Plant;
 
   
 }

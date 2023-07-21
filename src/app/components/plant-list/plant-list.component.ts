@@ -8,11 +8,9 @@ import { Plant } from 'src/app/models/plant';
 })
 export class PlantListComponent {
 
-  @Input()
-  plants!: Plant[];
-  categorieFiltre!:string[]
+  @Input() plants!: Plant[];
 
-  ngOniti() {
+  ngOninit() {
     
   }
 

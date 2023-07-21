@@ -14,6 +14,8 @@ import { CardComponent } from './components/card/card.component';
 import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
 import { FormsModule } from '@angular/forms';
 import { FilterPlantsPipe } from './filter-plants.pipe';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { GroupButtonComponent } from './components/group-button/group-button.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { FilterPlantsPipe } from './filter-plants.pipe';
     PlantListComponent,
     CardComponent,
     FilterBarComponent,
-    FilterPlantsPipe
+    FilterPlantsPipe,
+    SearchBarComponent,
+    GroupButtonComponent
   ],
   imports: [
     BrowserModule,

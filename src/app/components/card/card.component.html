@@ -3,6 +3,7 @@
     <div class="card-body">
         <h5 class="card-title">{{ planteAEnvoyer.nom }}</h5>
         <p class="card-text">{{ planteAEnvoyer.categorie }}</p>
+        
         <div class="container-goutte-eau">
 
             <img *ngIf="planteAEnvoyer.arrosage >= 1" src="../../../assets/goutte-deau.png" style="height: 20px;">
@@ -13,6 +14,15 @@
 
             <img *ngIf="planteAEnvoyer.arrosage >= 3" src="../../../assets/goutte-deau.png" style="height: 20px;">
             <img *ngIf="planteAEnvoyer.arrosage < 3" src="../../../assets/goutte-de-sang.png" style="height: 25px;">
+
+        </div>
+        <div class="container-soleil">
+            <img *ngIf="planteAEnvoyer.soleil == 'beaucoup' || planteAEnvoyer.soleil == 'moyen' || planteAEnvoyer.soleil == 'peu'" src="../../../assets/soleil_jaune.png" style="height: 25px;">
+            <img *ngIf="planteAEnvoyer.soleil != 'beaucoup' && planteAEnvoyer.soleil != 'moyen' && planteAEnvoyer.soleil != 'peu'" src="../../../assets/soleil_jaune.png" style="height: 25px;">
+            <img *ngIf="planteAEnvoyer.soleil == 'beaucoup' || planteAEnvoyer.soleil == 'moyen'" src="../../../assets/soleil_jaune.png" style="height: 25px;">
+            <img *ngIf="planteAEnvoyer.soleil != 'beaucoup' && planteAEnvoyer.soleil != 'moyen'" src="../../../assets/soleil.png" style="height: 25px;">
+            <img *ngIf="planteAEnvoyer.soleil == 'beaucoup'" src="../../../assets/soleil_jaune.png" style="height: 25px;">
+            <img *ngIf="planteAEnvoyer.soleil != 'beaucoup'" src="../../../assets/soleil.png" style="height: 25px;">
 
         </div>
     </div>
