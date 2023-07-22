@@ -9,7 +9,6 @@ import { PlantService } from 'src/app/services/plant.service';
 })
 export class PageHomeComponent implements OnInit{
 
-
   plantsToDisplay!: Plant[];
   plantsToDisplayFilter!: Plant[];
 
@@ -25,6 +24,8 @@ export class PageHomeComponent implements OnInit{
   userInput!:string;
   categoriesChecked!: string[];
 
+  countAlpha!: number;
+
   constructor(private plantService: PlantService) {}
 
   ngOnInit(): void {
@@ -39,7 +40,7 @@ export class PageHomeComponent implements OnInit{
       this.tabCategoriesFilter = this.categories;
       this.tabNombreDeGouttesFilter = this.nombreDeGouttes;
       this.tabEtatMeteoFilter = this.tabEtatMeteo;
-
+      this.countAlpha = 0;
     });
 
   }
@@ -91,7 +92,36 @@ export class PageHomeComponent implements OnInit{
     if(this.tabEtatMeteoFilter.length < 3) {
       this.plantsToDisplayFilter = this.plantsToDisplayFilter.filter((plant) => !this.tabEtatMeteoFilter.includes(plant.soleil))
     }
+    return this.plantsToDisplayFilter
+  }
 
+  valeurDuBouttonAlpha(value:string) {
+    this.countAlpha === 2 ? this.countAlpha = 0 : this.countAlpha ++;
+    console.log(this.countAlpha);
+    const tabTriAlpha = this.onUserInteractionFiltre()
+    if (this.countAlpha === 0) {
+      this.plantsToDisplayFilter = this.onUserInteractionFiltre();
+    }
+    if (this.countAlpha === 1) {
+      function comparePlants(plantA: { nom: string }, plantB: { nom: string }) {
+        return plantA.nom.localeCompare(plantB.nom);
+      } 
+      this.plantsToDisplayFilter = tabTriAlpha.sort(comparePlants)
+    } else if (this.countAlpha === 2) {
+      function comparePlants(plantA: { nom: string }, plantB: { nom: string }) {
+        return -1 * plantA.nom.localeCompare(plantB.nom);
+      } 
+      this.plantsToDisplayFilter = tabTriAlpha.sort(comparePlants)
+    }
+    console.log(this.plantsToDisplayFilter);
+  }
+
+  valeurDuBouttonArrosage(value:string) {
+    console.log(value);
+  }
+  
+  valeurDuBouttonEnsoleillement(value:string) {
+    console.log(value);
   }
 
 }

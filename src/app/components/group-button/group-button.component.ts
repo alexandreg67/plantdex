@@ -6,5 +6,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./group-button.component.css']
 })
 export class GroupButtonComponent {
+
   @Output() etatDuBouttonAlpha = new EventEmitter<string>()
+  @Output() etatDuBouttonArrosage = new EventEmitter<string>()
+  @Output() etatDuBouttonEnsoleillement = new EventEmitter<string>()
+  
 }
