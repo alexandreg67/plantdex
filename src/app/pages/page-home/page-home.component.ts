@@ -25,6 +25,8 @@ export class PageHomeComponent implements OnInit{
   categoriesChecked!: string[];
 
   countAlpha!: number;
+  countArrosage!: number;
+  countEnsoleillement!: number;
 
   constructor(private plantService: PlantService) {}
 
@@ -41,6 +43,9 @@ export class PageHomeComponent implements OnInit{
       this.tabNombreDeGouttesFilter = this.nombreDeGouttes;
       this.tabEtatMeteoFilter = this.tabEtatMeteo;
       this.countAlpha = 0;
+      this.countArrosage = 0;
+      this.countEnsoleillement = 0;
+
     });
 
   }
@@ -95,33 +100,75 @@ export class PageHomeComponent implements OnInit{
     return this.plantsToDisplayFilter
   }
 
-  valeurDuBouttonAlpha(value:string) {
-    this.countAlpha === 2 ? this.countAlpha = 0 : this.countAlpha ++;
-    console.log(this.countAlpha);
+  triAlpha(value:number) {
+    console.log("tri alpa value : ", value);
+    
     const tabTriAlpha = this.onUserInteractionFiltre()
-    if (this.countAlpha === 0) {
+    if (value === 0) {
       this.plantsToDisplayFilter = this.onUserInteractionFiltre();
     }
-    if (this.countAlpha === 1) {
+    if (value === 1) {
       function comparePlants(plantA: { nom: string }, plantB: { nom: string }) {
         return plantA.nom.localeCompare(plantB.nom);
       } 
       this.plantsToDisplayFilter = tabTriAlpha.sort(comparePlants)
-    } else if (this.countAlpha === 2) {
+    } else if (value === 2) {
       function comparePlants(plantA: { nom: string }, plantB: { nom: string }) {
         return -1 * plantA.nom.localeCompare(plantB.nom);
       } 
       this.plantsToDisplayFilter = tabTriAlpha.sort(comparePlants)
     }
-    console.log(this.plantsToDisplayFilter);
   }
 
-  valeurDuBouttonArrosage(value:string) {
-    console.log(value);
+  triArrosage(value:number) {
+    console.log("tri arrosage value : ",value);
+    const tabTriArrosage = this.onUserInteractionFiltre()
+    if (value === 0) {
+      this.plantsToDisplayFilter = this.onUserInteractionFiltre();
+    }
+    if (value === 1) {
+      this.plantsToDisplayFilter = tabTriArrosage.sort((plantA, plantB) =>  plantA.arrosage - plantB.arrosage)
+    } else if (value === 2) {
+      this.plantsToDisplayFilter = tabTriArrosage.sort((plantA, plantB) => plantB.arrosage - plantA.arrosage)
+    }
   }
-  
-  valeurDuBouttonEnsoleillement(value:string) {
-    console.log(value);
+
+  triEnsoleillement(value:number) {
+    console.log("tri ensoleillement value : ", value);
+  }
+
+  valeurDuBoutton(value:string) {
+    switch (value) {
+      case "Alpha":
+        this.countAlpha === 2 ? this.countAlpha = 0 : this.countAlpha ++;
+        this.countArrosage = 0;
+        this.countEnsoleillement = 0;
+        this.triEnsoleillement(this.countEnsoleillement)
+        this.triArrosage(this.countArrosage)
+        this.triAlpha(this.countAlpha)
+        break;
+      case "Arrosage":
+        this.countArrosage === 2 ? this.countArrosage = 0 : this.countArrosage ++;
+        this.countAlpha = 0;
+        this.countEnsoleillement = 0;
+        this.triEnsoleillement(this.countEnsoleillement)
+        this.triAlpha(this.countAlpha)
+        this.triArrosage(this.countArrosage)
+        break;
+      case "Ensoleillement":
+        this.countEnsoleillement === 2 ? this.countEnsoleillement = 0 : this.countEnsoleillement++
+        this.countAlpha = 0;
+        this.countArrosage = 0;
+        this.triAlpha(this.countAlpha);
+        this.triArrosage(this.countArrosage);
+        this.triEnsoleillement(this.countEnsoleillement)
+        break;
+    
+      default:
+        console.log("default dans le switch");
+        
+        break;
+    }
   }
 
 }
