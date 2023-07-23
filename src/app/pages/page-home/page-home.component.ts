@@ -135,6 +135,34 @@ export class PageHomeComponent implements OnInit{
 
   triEnsoleillement(value:number) {
     console.log("tri ensoleillement value : ", value);
+    const tabTriEnsoleillement = this.onUserInteractionFiltre()
+    if (value === 0) {
+      this.plantsToDisplayFilter = this.onUserInteractionFiltre()
+    }
+    if (value === 1) {
+      function comparerSoleil(plantA:Plant, plantB:Plant) {
+        if (plantA.soleil === "peu" && plantB.soleil === "moyen") return -1;
+        if (plantB.soleil === "peu" && plantA.soleil === "moyen") return 1;
+        if (plantA.soleil === "moyen" && plantB.soleil === "beaucoup") return -1;
+        if (plantB.soleil === "moyen" && plantA.soleil === "beaucoup") return 1;
+        return 0;
+      }
+  
+      this.plantsToDisplayFilter = tabTriEnsoleillement.sort(comparerSoleil);
+      
+    }else if (value === 2) {
+      function comparerSoleil(plantA:Plant, plantB:Plant) {
+        if (plantA.soleil === "peu" && plantB.soleil === "moyen") return 1;
+        if (plantB.soleil === "peu" && plantA.soleil === "moyen") return -1;
+        if (plantA.soleil === "moyen" && plantB.soleil === "beaucoup") return 1;
+        if (plantB.soleil === "moyen" && plantA.soleil === "beaucoup") return -1;
+        return 0;
+      }
+  
+      this.plantsToDisplayFilter = tabTriEnsoleillement.sort(comparerSoleil);
+    }
+    
+
   }
 
   valeurDuBoutton(value:string) {
