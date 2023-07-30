@@ -28,6 +28,8 @@ export class PageHomeComponent implements OnInit{
   countArrosage!: number;
   countEnsoleillement!: number;
 
+  tabTriButtonIntermediaire!: Plant[]
+
   constructor(private plantService: PlantService) {}
 
   ngOnInit(): void {
@@ -84,6 +86,9 @@ export class PageHomeComponent implements OnInit{
 
   onUserInteractionFiltre() {
     this.plantsToDisplayFilter = [...this.plantsToDisplay]
+    this.countAlpha = 0;
+    this.countArrosage = 0;
+    this.countEnsoleillement = 0;
     
     if(this.userInput) {
       this.plantsToDisplayFilter = this.plantsToDisplayFilter.filter((plant) => plant.nom.toLocaleLowerCase().includes(this.userInput.toLocaleLowerCase()))
@@ -100,46 +105,39 @@ export class PageHomeComponent implements OnInit{
     return this.plantsToDisplayFilter
   }
 
-  triAlpha(value:number) {
-    console.log("tri alpa value : ", value);
-    
-    const tabTriAlpha = this.onUserInteractionFiltre()
-    if (value === 0) {
-      this.plantsToDisplayFilter = this.onUserInteractionFiltre();
+  triAlpha(count:number) {
+    if (count === 0) {
+      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire;
     }
-    if (value === 1) {
+    if (count === 1) {
       function comparePlants(plantA: { nom: string }, plantB: { nom: string }) {
         return plantA.nom.localeCompare(plantB.nom);
       } 
-      this.plantsToDisplayFilter = tabTriAlpha.sort(comparePlants)
-    } else if (value === 2) {
+      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire.sort(comparePlants)
+    } else if (count === 2) {
       function comparePlants(plantA: { nom: string }, plantB: { nom: string }) {
         return -1 * plantA.nom.localeCompare(plantB.nom);
       } 
-      this.plantsToDisplayFilter = tabTriAlpha.sort(comparePlants)
+      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire.sort(comparePlants)
     }
   }
 
-  triArrosage(value:number) {
-    console.log("tri arrosage value : ",value);
-    const tabTriArrosage = this.onUserInteractionFiltre()
-    if (value === 0) {
-      this.plantsToDisplayFilter = this.onUserInteractionFiltre();
+  triArrosage(count:number) {
+    if (count === 0) {
+      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire;
     }
-    if (value === 1) {
-      this.plantsToDisplayFilter = tabTriArrosage.sort((plantA, plantB) =>  plantA.arrosage - plantB.arrosage)
-    } else if (value === 2) {
-      this.plantsToDisplayFilter = tabTriArrosage.sort((plantA, plantB) => plantB.arrosage - plantA.arrosage)
+    if (count === 1) {
+      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire.sort((plantA, plantB) =>  plantA.arrosage - plantB.arrosage)
+    } else if (count === 2) {
+      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire.sort((plantA, plantB) => plantB.arrosage - plantA.arrosage)
     }
   }
 
-  triEnsoleillement(value:number) {
-    console.log("tri ensoleillement value : ", value);
-    const tabTriEnsoleillement = this.onUserInteractionFiltre()
-    if (value === 0) {
-      this.plantsToDisplayFilter = this.onUserInteractionFiltre()
+  triEnsoleillement(count:number) {
+    if (count === 0) {
+      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire;
     }
-    if (value === 1) {
+    if (count === 1) {
       function comparerSoleil(plantA:Plant, plantB:Plant) {
         if (plantA.soleil === "peu" && plantB.soleil === "moyen") return -1;
         if (plantB.soleil === "peu" && plantA.soleil === "moyen") return 1;
@@ -148,9 +146,9 @@ export class PageHomeComponent implements OnInit{
         return 0;
       }
   
-      this.plantsToDisplayFilter = tabTriEnsoleillement.sort(comparerSoleil);
+      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire.sort(comparerSoleil);
       
-    }else if (value === 2) {
+    }else if (count === 2) {
       function comparerSoleil(plantA:Plant, plantB:Plant) {
         if (plantA.soleil === "peu" && plantB.soleil === "moyen") return 1;
         if (plantB.soleil === "peu" && plantA.soleil === "moyen") return -1;
@@ -159,42 +157,34 @@ export class PageHomeComponent implements OnInit{
         return 0;
       }
   
-      this.plantsToDisplayFilter = tabTriEnsoleillement.sort(comparerSoleil);
+      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire.sort(comparerSoleil);
     }
-    
-
   }
 
   valeurDuBoutton(value:string) {
+    this.tabTriButtonIntermediaire = [...this.plantsToDisplay]
     switch (value) {
       case "Alpha":
         this.countAlpha === 2 ? this.countAlpha = 0 : this.countAlpha ++;
         this.countArrosage = 0;
         this.countEnsoleillement = 0;
-        this.triEnsoleillement(this.countEnsoleillement)
-        this.triArrosage(this.countArrosage)
         this.triAlpha(this.countAlpha)
         break;
       case "Arrosage":
         this.countArrosage === 2 ? this.countArrosage = 0 : this.countArrosage ++;
         this.countAlpha = 0;
         this.countEnsoleillement = 0;
-        this.triEnsoleillement(this.countEnsoleillement)
-        this.triAlpha(this.countAlpha)
         this.triArrosage(this.countArrosage)
         break;
       case "Ensoleillement":
         this.countEnsoleillement === 2 ? this.countEnsoleillement = 0 : this.countEnsoleillement++
         this.countAlpha = 0;
         this.countArrosage = 0;
-        this.triAlpha(this.countAlpha);
-        this.triArrosage(this.countArrosage);
         this.triEnsoleillement(this.countEnsoleillement)
         break;
     
       default:
-        console.log("default dans le switch");
-        
+        console.log("default dans le switch");       
         break;
     }
   }

@@ -6,7 +6,8 @@
       "soleil": "peu",
       "arrosage": 3,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0952000/952438_003.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0952000/952438_003.jpg",
+      "favoris": false
     },
     {
       "id": 77390,
@@ -14,7 +15,9 @@
       "soleil": "moyen",
       "arrosage": 1,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0077000/77390_010.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0077000/77390_010.jpg",
+      "favoris": false
+
     },
     {
       "id": 910762,
@@ -22,7 +25,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910762_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910762_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801427,
@@ -30,7 +35,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801427_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801427_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910744,
@@ -38,7 +45,9 @@
       "soleil": "moyen",
       "arrosage": 1,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910744_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910744_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910743,
@@ -46,7 +55,9 @@
       "soleil": "peu",
       "arrosage": 2,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910743_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910743_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 63158,
@@ -54,7 +65,9 @@
       "soleil": "moyen",
       "arrosage": 3,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0063000/63158_005.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0063000/63158_005.jpg",
+      "favoris": false
+
     },
     {
       "id": 910674,
@@ -62,7 +75,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910674_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910674_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801429,
@@ -70,7 +85,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801429_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801429_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801428,
@@ -78,7 +95,9 @@
       "soleil": "beaucoup",
       "arrosage": 3,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801428_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801428_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832922,
@@ -86,7 +105,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832922_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832922_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832920,
@@ -94,7 +115,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832920_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832920_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832828,
@@ -102,7 +125,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832828_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832828_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 1023071,
@@ -110,7 +135,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/1023000/1023071_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/1023000/1023071_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 1029001,
@@ -118,7 +145,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/1029000/1029001_002.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/1029000/1029001_002.jpg",
+      "favoris": false
+
     },
     {
       "id": 871531,
@@ -126,7 +155,9 @@
       "soleil": "moyen",
       "arrosage": 1,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0871000/871531_002.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0871000/871531_002.jpg",
+      "favoris": false
+
     },
     {
       "id": 566494,
@@ -134,7 +165,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0566000/566494_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0566000/566494_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 121550,
@@ -142,7 +175,9 @@
       "soleil": "peu",
       "arrosage": 2,
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0121000/121550_011.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0121000/121550_011.jpg",
+      "favoris": false
+
     },
     {
       "id": 261303,
@@ -150,7 +185,9 @@
       "soleil": "peu",
       "arrosage": 2,
       "categorie": "orchidés",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0261000/261303_017.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0261000/261303_017.jpg",
+      "favoris": false
+
     },
     {
       "id": 952439,
@@ -158,7 +195,9 @@
       "soleil": "peu",
       "arrosage": 3,
       "categorie": "orchidés",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0952000/952439_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0952000/952439_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 569074,
@@ -166,7 +205,9 @@
       "soleil": "peu",
       "arrosage": 2,
       "categorie": "orchidés",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0569000/569074_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0569000/569074_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 482795,
@@ -174,7 +215,9 @@
       "soleil": "moyen",
       "arrosage": 1,
       "categorie": "orchidés",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0482000/482795_012.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0482000/482795_012.jpg",
+      "favoris": false
+
     },
     {
       "id": 312849,
@@ -182,7 +225,9 @@
       "soleil": "peu",
       "arrosage": 3,
       "categorie": "orchidés",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0312000/312849_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0312000/312849_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 588902,
@@ -190,7 +235,9 @@
       "soleil": "peu",
       "arrosage": 3,
       "categorie": "orchidés",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0588000/588902_002.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0588000/588902_002.jpg",
+      "favoris": false
+
     },
     {
       "id": 67544,
@@ -198,7 +245,9 @@
       "soleil": "peu",
       "arrosage": 3,
       "categorie": "orchidés",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0067000/67544_014.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0067000/67544_014.jpg",
+      "favoris": false
+
     },
     {
       "id": 953486,
@@ -206,7 +255,9 @@
       "soleil": "moyen",
       "arrosage": 1,
       "categorie": "orchidés",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0953000/953486_002.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0953000/953486_002.jpg",
+      "favoris": false
+
     },
     {
       "id": 504939,
@@ -214,7 +265,9 @@
       "soleil": "peu",
       "arrosage": 3,
       "categorie": "orchidés",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0504000/504939_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0504000/504939_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 750197,
@@ -222,7 +275,9 @@
       "soleil": "peu",
       "arrosage": 3,
       "categorie": "orchidés",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0750000/750197_004.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0750000/750197_004.jpg",
+      "favoris": false
+
     },
     {
       "id": 662530,
@@ -230,7 +285,9 @@
       "soleil": "peu",
       "arrosage": 3,
       "categorie": "orchidés",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0662000/662530_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0662000/662530_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 953485,
@@ -238,7 +295,9 @@
       "soleil": "peu",
       "arrosage": 3,
       "categorie": "orchidés",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0953000/953485_002.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0953000/953485_002.jpg",
+      "favoris": false
+
     },
     {
       "id": 504900,
@@ -246,7 +305,9 @@
       "soleil": "peu",
       "arrosage": 3,
       "categorie": "orchidés",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0504000/504900_004.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0504000/504900_004.jpg",
+      "favoris": false
+
     },
     {
       "id": 832797,
@@ -254,7 +315,9 @@
       "soleil": "beaucoup",
       "arrosage": 1,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832797_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832797_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 628685,
@@ -262,7 +325,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0628000/628685_027.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0628000/628685_027.jpg",
+      "favoris": false
+
     },
     {
       "id": 693107,
@@ -270,7 +335,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0693000/693107_002.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0693000/693107_002.jpg",
+      "favoris": false
+
     },
     {
       "id": 910698,
@@ -278,7 +345,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910698_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910698_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832856,
@@ -286,7 +355,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832856_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832856_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 670298,
@@ -294,7 +365,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0670000/670298_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0670000/670298_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832813,
@@ -302,7 +375,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832813_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832813_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832812,
@@ -310,7 +385,9 @@
       "soleil": "beaucoup",
       "arrosage": 1,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832812_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832812_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832854,
@@ -318,7 +395,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832854_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832854_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 926982,
@@ -326,7 +405,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0926000/926982_002.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0926000/926982_002.jpg",
+      "favoris": false
+
     },
     {
       "id": 910731,
@@ -334,7 +415,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910731_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910731_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832799,
@@ -342,7 +425,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832799_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832799_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832798,
@@ -350,7 +435,9 @@
       "soleil": "beaucoup",
       "arrosage": 1,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832798_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832798_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 318568,
@@ -358,7 +445,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0318000/318568_002.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0318000/318568_002.jpg",
+      "favoris": false
+
     },
     {
       "id": 718750,
@@ -366,7 +455,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0718000/718750_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0718000/718750_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 128842,
@@ -374,7 +465,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0128000/128842_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0128000/128842_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 628683,
@@ -382,7 +475,9 @@
       "soleil": "beaucoup",
       "arrosage": 1,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0628000/628683_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0628000/628683_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 565111,
@@ -390,7 +485,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0565000/565111_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0565000/565111_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 326095,
@@ -398,7 +495,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0326000/326095_009.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0326000/326095_009.jpg",
+      "favoris": false
+
     },
     {
       "id": 462944,
@@ -406,7 +505,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0462000/462944_007.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0462000/462944_007.jpg",
+      "favoris": false
+
     },
     {
       "id": 63228,
@@ -414,7 +515,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0063000/63228_006.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0063000/63228_006.jpg",
+      "favoris": false
+
     },
     {
       "id": 85267,
@@ -422,7 +525,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0085000/85267_006.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0085000/85267_006.jpg",
+      "favoris": false
+
     },
     {
       "id": 349053,
@@ -430,7 +535,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0349000/349053_003.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0349000/349053_003.jpg",
+      "favoris": false
+
     },
     {
       "id": 718726,
@@ -438,7 +545,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0718000/718726_009.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0718000/718726_009.jpg",
+      "favoris": false
+
     },
     {
       "id": 30875,
@@ -446,7 +555,9 @@
       "soleil": "beaucoup",
       "arrosage": 0,
       "categorie": "cactus et plantes grasses",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0030000/30875_003.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0030000/30875_003.jpg",
+      "favoris": false
+
     },
     {
       "id": 832717,
@@ -454,7 +565,9 @@
       "soleil": "peu",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832717_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832717_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910626,
@@ -462,7 +575,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910626_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910626_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832635,
@@ -470,7 +585,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832635_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832635_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832728,
@@ -478,7 +595,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832728_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832728_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832726,
@@ -486,7 +605,9 @@
       "soleil": "moyen",
       "arrosage": 3,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832726_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832726_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832723,
@@ -494,7 +615,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832723_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832723_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832721,
@@ -502,7 +625,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832721_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832721_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832718,
@@ -510,7 +635,9 @@
       "soleil": "peu",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832718_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832718_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 927584,
@@ -518,7 +645,9 @@
       "soleil": "moyen",
       "arrosage": 3,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0927000/927584_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0927000/927584_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 906247,
@@ -526,7 +655,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0906000/906247_002.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0906000/906247_002.jpg",
+      "favoris": false
+
     },
     {
       "id": 828654,
@@ -534,7 +665,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0828000/828654_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0828000/828654_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 828653,
@@ -542,7 +675,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0828000/828653_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0828000/828653_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 827029,
@@ -550,7 +685,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0827000/827029_002.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0827000/827029_002.jpg",
+      "favoris": false
+
     },
     {
       "id": 828003,
@@ -558,7 +695,9 @@
       "soleil": "beaucoup",
       "arrosage": 1,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0828000/828003_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0828000/828003_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 473744,
@@ -566,7 +705,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0473000/473744_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0473000/473744_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 473743,
@@ -574,7 +715,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0473000/473743_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0473000/473743_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 473733,
@@ -582,7 +725,9 @@
       "soleil": "moyen",
       "arrosage": 1,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0473000/473733_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0473000/473733_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 473722,
@@ -590,7 +735,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "bonsaïs",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0473000/473722_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0473000/473722_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910670,
@@ -598,7 +745,9 @@
       "soleil": "moyen",
       "arrosage": 1,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910670_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910670_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801437,
@@ -606,7 +755,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801437_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801437_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910671,
@@ -614,7 +765,9 @@
       "soleil": "peu",
       "arrosage": 3,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910671_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910671_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801454,
@@ -622,7 +775,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801454_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801454_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832886,
@@ -630,7 +785,9 @@
       "soleil": "moyen",
       "arrosage": 3,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832886_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832886_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 475397,
@@ -638,7 +795,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0475000/475397_003.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0475000/475397_003.jpg",
+      "favoris": false
+
     },
     {
       "id": 832885,
@@ -646,7 +805,9 @@
       "soleil": "peu",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832885_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832885_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801438,
@@ -654,7 +815,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801438_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801438_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 956016,
@@ -662,7 +825,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0956000/956016_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0956000/956016_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910696,
@@ -670,7 +835,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910696_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910696_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910682,
@@ -678,7 +845,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910682_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910682_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832871,
@@ -686,7 +855,9 @@
       "soleil": "moyen",
       "arrosage": 3,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832871_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832871_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801444,
@@ -694,7 +865,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801444_002.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801444_002.jpg",
+      "favoris": false
+
     },
     {
       "id": 910737,
@@ -702,7 +875,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910737_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910737_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910680,
@@ -710,7 +885,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910680_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910680_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801459,
@@ -718,7 +895,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801459_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801459_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 956015,
@@ -726,7 +905,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0956000/956015_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0956000/956015_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 1023051,
@@ -734,7 +915,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/1023000/1023051_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/1023000/1023051_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 646556,
@@ -742,7 +925,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0646000/646556_002.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0646000/646556_002.jpg",
+      "favoris": false
+
     },
     {
       "id": 801461,
@@ -750,7 +935,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801461_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801461_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801456,
@@ -758,7 +945,9 @@
       "soleil": "peu",
       "arrosage": 3,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801456_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801456_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801458,
@@ -766,7 +955,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801458_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801458_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801447,
@@ -774,7 +965,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801447_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801447_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801432,
@@ -782,7 +975,9 @@
       "soleil": "peu",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801432_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801432_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801436,
@@ -790,7 +985,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801436_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801436_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 789670,
@@ -798,7 +995,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0789000/789670_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0789000/789670_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832897,
@@ -806,7 +1005,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "plantes vertes",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832897_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832897_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910670,
@@ -814,7 +1015,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910670_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910670_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910671,
@@ -822,7 +1025,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910671_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910671_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910741,
@@ -830,7 +1035,9 @@
       "soleil": "beaucoup",
       "arrosage": 3,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910741_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910741_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910737,
@@ -838,7 +1045,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910737_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910737_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 1023051,
@@ -846,7 +1055,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/1023000/1023051_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/1023000/1023051_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 801433,
@@ -854,7 +1065,9 @@
       "soleil": "moyen",
       "arrosage": 1,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801433_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801433_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910724,
@@ -862,7 +1075,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910724_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910724_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832844,
@@ -870,7 +1085,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832844_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832844_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832842,
@@ -878,7 +1095,9 @@
       "soleil": "moyen",
       "arrosage": 1,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832842_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832842_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 1023075,
@@ -886,7 +1105,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/1023000/1023075_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/1023000/1023075_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 506230,
@@ -894,7 +1115,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0506000/506230_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0506000/506230_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 20899,
@@ -902,7 +1125,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0020000/20899_009.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0020000/20899_009.jpg",
+      "favoris": false
+
     },
     {
       "id": 801435,
@@ -910,7 +1135,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801435_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801435_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 788834,
@@ -918,7 +1145,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0788000/788834_002.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0788000/788834_002.jpg",
+      "favoris": false
+
     },
     {
       "id": 20893,
@@ -926,7 +1155,9 @@
       "soleil": "beaucoup",
       "arrosage": 1,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0020000/20893_007.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0020000/20893_007.jpg",
+      "favoris": false
+
     },
     {
       "id": 832843,
@@ -934,7 +1165,9 @@
       "soleil": "moyen",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832843_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832843_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 832907,
@@ -942,7 +1175,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832907_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832907_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 292649,
@@ -950,7 +1185,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0292000/292649_005.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0292000/292649_005.jpg",
+      "favoris": false
+
     },
     {
       "id": 801434,
@@ -958,7 +1195,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801434_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801434_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910742,
@@ -966,7 +1205,9 @@
       "soleil": "beaucoup",
       "arrosage": 1,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910742_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910742_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910738,
@@ -974,7 +1215,9 @@
       "soleil": "beaucoup",
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910738_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910738_001.jpg",
+      "favoris": false
+
     },
     {
       "id": 910673,
@@ -982,7 +1225,9 @@
       "soleil": "beaucoup",
       "arrosage": 3,
       "categorie": "palmiers d'intérieur",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910673_001.jpg"
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910673_001.jpg",
+      "favoris": false
+
     }
   ]
 }

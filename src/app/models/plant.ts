@@ -5,4 +5,5 @@ export interface Plant {
     arrosage: number;
     categorie: string;
     image: string;
+    favoris:boolean;
 }

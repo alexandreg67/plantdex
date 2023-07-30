@@ -1,5 +1,9 @@
 <div *ngIf="planteAEnvoyer" class="card mb-2" style="width: 18rem;height: 520px;">
-    <img class="card-img-top" src='{{ planteAEnvoyer.image }}' alt="Card image cap">
+    <div class="container-img">
+        <img class="card-img-top card-img" src='{{ planteAEnvoyer.image }}' alt="Card image cap">
+        <i  *ngIf="planteAEnvoyer.favoris === false" class="bi bi-heart icon-favoris" (click)="ajouterAuxFavoris(planteAEnvoyer)"></i>
+        <i *ngIf="planteAEnvoyer.favoris === true" class="bi bi-heart-fill icon-favoris" (click)="ajouterAuxFavoris(planteAEnvoyer)"></i>
+    </div>
     <div class="card-body">
         <h5 class="card-title">{{ planteAEnvoyer.nom }}</h5>
         <p class="card-text">{{ planteAEnvoyer.categorie }}</p>
@@ -24,6 +28,20 @@
             <img *ngIf="planteAEnvoyer.soleil == 'beaucoup'" src="../../../assets/soleil_jaune.png" style="height: 25px;">
             <img *ngIf="planteAEnvoyer.soleil != 'beaucoup'" src="../../../assets/soleil.png" style="height: 25px;">
 
+        </div>
+    </div>
+</div>
+
+<div class="modal" #myModal>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4> {{ plantName }} a été ajouté à vos favoris </h4>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" (click)="closeModal()">Retour</button>
+            </div>
         </div>
     </div>
 </div>

@@ -1,25 +1,26 @@
-<div class="container-plants">
-
-    <app-filter-bar 
-        [categories]="categories" 
-        [nombreDeGouttesRecu]="nombreDeGouttes"
-        [tabEtatMeteoRecu]="tabEtatMeteo"
-        (newCategoriesEvent)="selectCategorie($event)" 
-        (newSoleilEvent)="selectSoleil($event)" 
-        (newGouttesEvent)="selectGouttes($event)"
-        ></app-filter-bar>
-
-    <div>
-        <app-search-bar (inputUser)="onEnterSearch($event)"></app-search-bar>
-
-        <app-group-button 
-        (etatDuBouttonAlpha)="valeurDuBoutton($event)"
-        (etatDuBouttonArrosage)="valeurDuBoutton($event)"
-        (etatDuBouttonEnsoleillement)="valeurDuBoutton($event)"
-        ></app-group-button>
-
-        <app-plant-list [plants]="plantsToDisplayFilter"></app-plant-list>
+<div class="main-container">
+    <h1><b>S</b>uper <b>N</b>atural <b>C</b>rops and <b>F</b>lowers</h1>
+    <div class="container-plants">
+        <app-filter-bar 
+            [categories]="categories" 
+            [nombreDeGouttesRecu]="nombreDeGouttes"
+            [tabEtatMeteoRecu]="tabEtatMeteo"
+            (newCategoriesEvent)="selectCategorie($event)" 
+            (newSoleilEvent)="selectSoleil($event)" 
+            (newGouttesEvent)="selectGouttes($event)"
+            ></app-filter-bar>
+    
+        <div>
+            <app-search-bar (inputUser)="onEnterSearch($event)"></app-search-bar>
+    
+            <app-group-button 
+                (etatDuBoutton)="valeurDuBoutton($event)"
+                [countAlpha]="countAlpha"
+                [countArrosage]="countArrosage"
+                [countEnsoleillement]="countEnsoleillement"
+            ></app-group-button>
+    
+            <app-plant-list [plants]="plantsToDisplayFilter"></app-plant-list>
+        </div>
     </div>
-
-        
 </div>

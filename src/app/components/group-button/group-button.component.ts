@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-group-button',
@@ -7,8 +7,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class GroupButtonComponent {
 
-  @Output() etatDuBouttonAlpha = new EventEmitter<string>()
-  @Output() etatDuBouttonArrosage = new EventEmitter<string>()
-  @Output() etatDuBouttonEnsoleillement = new EventEmitter<string>()
+  @Input() countAlpha!:number;
+  @Input() countArrosage!:number;
+  @Input() countEnsoleillement!:number;
+
+  @Output() etatDuBoutton = new EventEmitter<string>()
   
 }

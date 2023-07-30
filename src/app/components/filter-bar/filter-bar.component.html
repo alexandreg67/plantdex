@@ -20,7 +20,8 @@
                 <img *ngIf="gouttes >=2 && isChecked.checked" [src]="imageGoutteEau" style="height: 20px;">
                 <img *ngIf="gouttes >=1 && !isChecked.checked" [src]="imageSansEau" style="height: 20px;">
                 <img *ngIf="gouttes >=1 && isChecked.checked" [src]="imageGoutteEau" style="height: 20px;">
-                <img *ngIf="gouttes ==0" src="../../../assets/pas-deau.png" style="height: 20px;">
+                <img *ngIf="gouttes === 0 && isChecked.checked" src="../../../assets/pas-deau.png" style="height: 20px;">
+                <img *ngIf="gouttes === 0 && !isChecked.checked" src="../../../assets/sans-gras-trans.png" style="height: 20px;">
             </label>
         </li>
     </div>

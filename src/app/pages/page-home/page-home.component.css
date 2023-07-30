@@ -1,5 +1,16 @@
+.main-container {
+    padding: 80px 50px;
+}
+h1 {
+    text-align: center;
+    padding: 10px;
+}
 .container-plants {
     display: flex;
-    margin-top: 20px;
-    padding: 100px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+b {
+    color: green;
 }

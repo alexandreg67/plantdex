@@ -2,12 +2,17 @@
     <p>Trier par : </p>
     
     <div class="container-button">
-        <button #inputAlpha type="button" value="Alpha" class="btn btn-primary" (click)="etatDuBouttonAlpha.emit(inputAlpha.value)">
-        Alphabétique
+        <button #inputAlpha type="button" value="Alpha" class="btn" (click)="etatDuBoutton.emit(inputAlpha.value)">Alphabétique 
+            <i *ngIf="countAlpha === 2" class="bi bi-arrow-up-short"></i>
+            <i *ngIf="countAlpha === 1" class="bi bi-arrow-down-short"></i>
         </button>
-        
-        <!-- <input #inputAlpha class="btn btn-primary"  type="button" value="Alpha" (click)="etatDuBouttonAlpha.emit(inputAlpha.value)"> -->
-        <input #inputArrosage class="btn btn-primary" type="button" value="Arrosage" (click)="etatDuBouttonArrosage.emit(inputArrosage.value)">
-        <input #inputEnsoleillement class="btn btn-primary" type="button" value="Ensoleillement" (click)="etatDuBouttonEnsoleillement.emit(inputEnsoleillement.value)">  
+        <button #inputArrosage class="btn" type="button" value="Arrosage" (click)="etatDuBoutton.emit(inputArrosage.value)">{{ inputArrosage.value }}
+            <i *ngIf="countArrosage === 2" class="bi bi-arrow-up-short"></i>
+            <i *ngIf="countArrosage === 1" class="bi bi-arrow-down-short"></i>
+        </button>
+        <button #inputEnsoleillement class="btn " type="button" value="Ensoleillement" (click)="etatDuBoutton.emit(inputEnsoleillement.value)">{{ inputEnsoleillement.value }}
+            <i *ngIf="countEnsoleillement === 2" class="bi bi-arrow-up-short"></i>
+            <i *ngIf="countEnsoleillement === 1" class="bi bi-arrow-down-short"></i>
+        </button>
     </div>
 </div>
