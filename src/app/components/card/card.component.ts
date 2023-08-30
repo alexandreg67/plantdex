@@ -21,11 +21,15 @@ export class CardComponent  {
     
   }
   ajouterAuxFavoris(plant: Plant) {
-    this.myModal.nativeElement.style.display = "block";
     console.log("plant", this.planteAEnvoyer);
     this.plantId = plant.id;
     this.plantName = plant.nom;
-    plant.favoris = true;
+    if (plant.favoris) {
+      plant.favoris = false;
+    }else {
+      this.myModal.nativeElement.style.display = "block";
+      plant.favoris = true;
+    }
   }
 
   closeModal(): void {

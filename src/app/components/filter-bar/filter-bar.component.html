@@ -5,46 +5,42 @@
     <div class="form-check">
         <h3>Catégories</h3>
         <li class="list-group-item" *ngFor="let item of categories">
-            <input class="form-check-input" id='{{ item }}' type="checkbox" (change)="applyFiltersCategories(item)" value="{{ item }}">
+            <input class="form-check-input" id='{{ item }}' type="checkbox" (change)="applyFilter('categorie', item)"
+                value="{{ item }}">
             <label class="form-check-label" for='{{ item }}'>{{ item }}</label>
         </li>
     </div>
     <div class="form-check">
         <h3>Quantité d'eau</h3>
         <li class="list-group-item" *ngFor="let gouttes of nombreDeGouttesRecu">
-            <input #isChecked class="form-check-input inputDisplay" id='{{ gouttes }}' type="checkbox" (change)="applyFiltersGouttes(gouttes)"  value="{{ gouttes }}">
+            <input #isChecked class="form-check-input inputDisplay" id='{{ gouttes }}' type="checkbox"
+                (change)="applyFilter('goutte', gouttes)" value="{{ gouttes }}">
             <label class="form-check-label" for='{{ gouttes }}'>
-                <img *ngIf="gouttes >=3 && !isChecked.checked" [src]="imageSansEau" style="height: 20px;">
-                <img *ngIf="gouttes >=3 && isChecked.checked" [src]="imageGoutteEau" style="height: 20px;">
-                <img *ngIf="gouttes >=2 && !isChecked.checked" [src]="imageSansEau" style="height: 20px;">
-                <img *ngIf="gouttes >=2 && isChecked.checked" [src]="imageGoutteEau" style="height: 20px;">
-                <img *ngIf="gouttes >=1 && !isChecked.checked" [src]="imageSansEau" style="height: 20px;">
-                <img *ngIf="gouttes >=1 && isChecked.checked" [src]="imageGoutteEau" style="height: 20px;">
-                <img *ngIf="gouttes === 0 && isChecked.checked" src="../../../assets/pas-deau.png" style="height: 20px;">
-                <img *ngIf="gouttes === 0 && !isChecked.checked" src="../../../assets/sans-gras-trans.png" style="height: 20px;">
+                <ng-container *ngIf="gouttes !== 0; else noWater">
+                    <ng-container  *ngFor="let i of [].constructor(gouttes); let last = last">
+                        <img *ngIf="!isChecked.checked" [src]="imageSansEau" style="height: 20px;">
+                        <img *ngIf="isChecked.checked" [src]="imageGoutteEau" style="height: 20px;">
+                    </ng-container>
+                </ng-container>
+                <ng-template #noWater>
+                    <img *ngIf="!isChecked.checked" src="../../../assets/sans-gras-trans.png" style="height: 20px;">
+                    <img *ngIf="isChecked.checked" src="../../../assets/pas-deau.png" style="height: 20px;">
+                </ng-template>
             </label>
         </li>
     </div>
     <div class="form-check">
         <h3>Quantité de soleil</h3>
         <li class="list-group-item" *ngFor="let meteo of tabEtatMeteoRecu">
-            <input #isChecked  class="form-check-input inputDisplay" id='{{ meteo }}' type="checkbox" (change)="applyFiltersSoleil(meteo)"  value="{{ meteo }}">
+            <input #isChecked class="form-check-input inputDisplay" id='{{ meteo }}' type="checkbox"
+                (change)="applyFilter('etatMeteo', meteo)" value="{{ meteo }}">
             <label class="form-check-label" for='{{ meteo }}'>
-                <img *ngIf="meteo == 'peu' && !isChecked.checked" [src]="soleilVide" style="height: 25px;">
-                <img *ngIf="meteo == 'peu' && isChecked.checked" [src]="soleilJaune" style="height: 25px;">
-                <img *ngIf="meteo == 'moyen' && isChecked.checked" [src]="soleilJaune" style="height: 25px;">
-                <img *ngIf="meteo == 'moyen' && isChecked.checked" [src]="soleilJaune" style="height: 25px;">
-                <img *ngIf="meteo == 'moyen' && !isChecked.checked" [src]="soleilVide" style="height: 25px;">
-                <img *ngIf="meteo == 'moyen' && !isChecked.checked" [src]="soleilVide" style="height: 25px;">
-                <img *ngIf="meteo == 'beaucoup' && !isChecked.checked" [src]="soleilVide" style="height: 25px;">
-                <img *ngIf="meteo == 'beaucoup' && !isChecked.checked" [src]="soleilVide" style="height: 25px;">
-                <img *ngIf="meteo == 'beaucoup' && !isChecked.checked" [src]="soleilVide" style="height: 25px;">
-                <img *ngIf="meteo == 'beaucoup' && isChecked.checked" [src]="soleilJaune" style="height: 25px;">
-                <img *ngIf="meteo == 'beaucoup' && isChecked.checked" [src]="soleilJaune" style="height: 25px;">
-                <img *ngIf="meteo == 'beaucoup' && isChecked.checked" [src]="soleilJaune" style="height: 25px;">
+                <ng-container
+                    *ngFor="let i of [].constructor(meteo === 'peu' ? 1 : (meteo === 'moyen' ? 2 : 3)); let last = last">
+                    <img *ngIf="!isChecked.checked" [src]="soleilVide" style="height: 20px;">
+                    <img *ngIf="isChecked.checked" [src]="soleilJaune" style="height: 20px;">
+                </ng-container>
             </label>
         </li>
     </div>
 </div>
-        
-

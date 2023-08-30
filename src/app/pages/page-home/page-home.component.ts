@@ -7,186 +7,169 @@ import { PlantService } from 'src/app/services/plant.service';
   templateUrl: './page-home.component.html',
   styleUrls: ['./page-home.component.css']
 })
-export class PageHomeComponent implements OnInit{
+export class PageHomeComponent implements OnInit {
 
-  plantsToDisplay!: Plant[];
-  plantsToDisplayFilter!: Plant[];
+  originalPlants: Plant[] = [];
+
+  plantsToDisplay: Plant[] = [];
+  plantsToDisplayFilter: Plant[] = [];
 
   categories: string[] = [];
+  nombreDeGouttes: number[] = [0, 1, 2, 3];
+  tabEtatMeteo: string[] = ["peu", "moyen", "beaucoup"];
+
   tabCategoriesFilter: string[] = [];
+  tabNombreDeGouttesFilter: number[] = [];
+  tabEtatMeteoFilter: string[] = [];
 
-  nombreDeGouttes: number[] = [];
-  tabNombreDeGouttesFilter: number[] = []
+  userInput: string = '';
 
-  tabEtatMeteo: string[] = [];
-  tabEtatMeteoFilter:string[] = [];
+  countAlpha = 0;
+  countArrosage = 0;
+  countEnsoleillement = 0;
 
-  userInput!:string;
-  categoriesChecked!: string[];
-
-  countAlpha!: number;
-  countArrosage!: number;
-  countEnsoleillement!: number;
-
-  tabTriButtonIntermediaire!: Plant[]
-
-  constructor(private plantService: PlantService) {}
+  constructor(private plantService: PlantService) { }
 
   ngOnInit(): void {
-      const notreFluxDonnees = this.plantService.getPlants();
-      notreFluxDonnees.subscribe((data: Plant[]) => {
-
+    this.plantService.getPlants().subscribe((data: Plant[]) => {
       this.plantsToDisplay = data;
-      this.plantsToDisplayFilter = [...this.plantsToDisplay];
-      this.categories = [... new Set(this.plantsToDisplay.map(e => e.categorie))]; 
-      this.nombreDeGouttes = [... new Set(this.plantsToDisplay.map(e => e.arrosage).sort())];
-      this.tabEtatMeteo = [... new Set(this.plantsToDisplay.map(e => e.soleil))] 
-      this.tabCategoriesFilter = this.categories;
-      this.tabNombreDeGouttesFilter = this.nombreDeGouttes;
-      this.tabEtatMeteoFilter = this.tabEtatMeteo;
-      this.countAlpha = 0;
-      this.countArrosage = 0;
-      this.countEnsoleillement = 0;
-
+      this.originalPlants = [...data];
+      this.updateFilteredList();
+      this.categories = [... new Set(this.plantsToDisplay.map(e => e.categorie))];
+      this.resetFilters();
     });
-
   }
-  
-  selectCategorie(categorie:string) {
-    if (this.tabCategoriesFilter.includes(categorie)) {
-      this.tabCategoriesFilter = this.tabCategoriesFilter.filter(e => e != categorie)
-    }else {
-      this.tabCategoriesFilter.push(categorie)
+
+  resetFilters(): void {
+    this.tabCategoriesFilter = [];
+    this.tabNombreDeGouttesFilter = [];
+    this.tabEtatMeteoFilter = [];
+  }
+
+ toggleFilter(filterList: any[], filterValue: any) {
+    const index = filterList.indexOf(filterValue);
+    if (index > -1) {
+        filterList.splice(index, 1);
+    } else {
+        filterList.push(filterValue);
     }
-    this.onUserInteractionFiltre()
+    console.log("Filtres mis à jour: ", filterList);
+    this.updateFilteredList();
   }
 
-  selectSoleil(soleil:string) {
-    if (this.tabEtatMeteoFilter.includes(soleil)) {
-      this.tabEtatMeteoFilter = this.tabEtatMeteoFilter.filter(e => e != soleil)
-    }else {
-      this.tabEtatMeteoFilter.push(soleil)
-    }
-    this.onUserInteractionFiltre()
-  }
-
-  selectGouttes(gouttes:number) {
-    if (this.tabNombreDeGouttesFilter.includes(gouttes)) {
-      this.tabNombreDeGouttesFilter = this.tabNombreDeGouttesFilter.filter(e => e != gouttes)
-    }else {
-      this.tabNombreDeGouttesFilter.push(gouttes)
-    }
-    this.onUserInteractionFiltre()
-  }
-
-  onEnterSearch(resultUserSearch:string){
+  onEnterSearch(resultUserSearch: string): void {
     this.userInput = resultUserSearch;
-    this.onUserInteractionFiltre()
+    this.updateFilteredList();
   }
 
-  onUserInteractionFiltre() {
-    this.plantsToDisplayFilter = [...this.plantsToDisplay]
-    this.countAlpha = 0;
-    this.countArrosage = 0;
-    this.countEnsoleillement = 0;
-    
-    if(this.userInput) {
-      this.plantsToDisplayFilter = this.plantsToDisplayFilter.filter((plant) => plant.nom.toLocaleLowerCase().includes(this.userInput.toLocaleLowerCase()))
+  updateFilteredList(): void {
+    let filtered = [...this.plantsToDisplay];
+
+    if (this.userInput) {
+        filtered = filtered.filter(plant => plant.nom.toLowerCase().includes(this.userInput.toLowerCase()));
     }
-    if(this.tabNombreDeGouttesFilter.length < 4) {
-      this.plantsToDisplayFilter = this.plantsToDisplayFilter.filter((plant) => !this.tabNombreDeGouttesFilter.includes(plant.arrosage))
+
+    if (this.tabNombreDeGouttesFilter.length) {
+        filtered = filtered.filter(plant => this.tabNombreDeGouttesFilter.includes(plant.arrosage));
     }
-    if(this.tabCategoriesFilter.length < 6) {
-      this.plantsToDisplayFilter = this.plantsToDisplayFilter.filter((plant) => !this.tabCategoriesFilter.includes(plant.categorie))
+
+    if (this.tabCategoriesFilter.length) {
+        filtered = filtered.filter(plant => this.tabCategoriesFilter.includes(plant.categorie));
     }
-    if(this.tabEtatMeteoFilter.length < 3) {
-      this.plantsToDisplayFilter = this.plantsToDisplayFilter.filter((plant) => !this.tabEtatMeteoFilter.includes(plant.soleil))
+
+    if (this.tabEtatMeteoFilter.length) {
+        filtered = filtered.filter(plant => this.tabEtatMeteoFilter.includes(plant.soleil));
     }
-    return this.plantsToDisplayFilter
+
+    this.plantsToDisplayFilter = filtered;
   }
 
-  triAlpha(count:number) {
-    if (count === 0) {
-      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire;
-    }
-    if (count === 1) {
-      function comparePlants(plantA: { nom: string }, plantB: { nom: string }) {
-        return plantA.nom.localeCompare(plantB.nom);
-      } 
-      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire.sort(comparePlants)
-    } else if (count === 2) {
-      function comparePlants(plantA: { nom: string }, plantB: { nom: string }) {
-        return -1 * plantA.nom.localeCompare(plantB.nom);
-      } 
-      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire.sort(comparePlants)
-    }
+  sortArray<T>(arr: T[], compareFunction: (a: T, b: T) => number): T[] {
+    return arr.slice().sort(compareFunction);
   }
 
-  triArrosage(count:number) {
-    if (count === 0) {
-      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire;
+  triAlpha(): void {
+    if (this.countAlpha === 0) {
+        this.plantsToDisplayFilter = [...this.originalPlants];
+        this.updateFilteredList();
+        return;
     }
-    if (count === 1) {
-      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire.sort((plantA, plantB) =>  plantA.arrosage - plantB.arrosage)
-    } else if (count === 2) {
-      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire.sort((plantA, plantB) => plantB.arrosage - plantA.arrosage)
-    }
+
+    const compareFuncs = [
+      (a: Plant, b: Plant) => a.nom.localeCompare(b.nom),  // Ascendant
+      (a: Plant, b: Plant) => b.nom.localeCompare(a.nom)   // Descendant
+    ];
+
+    this.plantsToDisplayFilter = this.sortArray(this.plantsToDisplayFilter, compareFuncs[this.countAlpha - 1]);
   }
 
-  triEnsoleillement(count:number) {
-    if (count === 0) {
-      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire;
+  triArrosage(): void {
+    if (this.countArrosage === 0) {
+        this.plantsToDisplayFilter = [...this.originalPlants];
+        this.updateFilteredList();
+        return;
     }
-    if (count === 1) {
-      function comparerSoleil(plantA:Plant, plantB:Plant) {
-        if (plantA.soleil === "peu" && plantB.soleil === "moyen") return -1;
-        if (plantB.soleil === "peu" && plantA.soleil === "moyen") return 1;
-        if (plantA.soleil === "moyen" && plantB.soleil === "beaucoup") return -1;
-        if (plantB.soleil === "moyen" && plantA.soleil === "beaucoup") return 1;
-        return 0;
-      }
-  
-      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire.sort(comparerSoleil);
-      
-    }else if (count === 2) {
-      function comparerSoleil(plantA:Plant, plantB:Plant) {
-        if (plantA.soleil === "peu" && plantB.soleil === "moyen") return 1;
-        if (plantB.soleil === "peu" && plantA.soleil === "moyen") return -1;
-        if (plantA.soleil === "moyen" && plantB.soleil === "beaucoup") return 1;
-        if (plantB.soleil === "moyen" && plantA.soleil === "beaucoup") return -1;
-        return 0;
-      }
-  
-      this.plantsToDisplayFilter = this.tabTriButtonIntermediaire.sort(comparerSoleil);
-    }
+    const compareFuncs = [
+      (a: Plant, b: Plant) => 0,
+      (a: Plant, b: Plant) => a.arrosage - b.arrosage,
+      (a: Plant, b: Plant) => b.arrosage - a.arrosage
+    ];
+
+    this.plantsToDisplayFilter = this.sortArray(this.plantsToDisplayFilter, compareFuncs[this.countArrosage]);
   }
 
-  valeurDuBoutton(value:string) {
-    this.tabTriButtonIntermediaire = [...this.plantsToDisplay]
+  handleFilterEvent(event: { type: string, value: any }): void {
+    switch(event.type) {
+        case 'categorie':
+            this.toggleFilter(this.tabCategoriesFilter, event.value);
+            break;
+        case 'goutte':
+            this.toggleFilter(this.tabNombreDeGouttesFilter, event.value);
+            break;
+        case 'etatMeteo':
+            this.toggleFilter(this.tabEtatMeteoFilter, event.value);
+            break;
+        default:
+            console.error(`Type de filtre inconnu: ${event.type}`);
+    }
+  }   
+
+  // ... autres fonctions de tri ...
+
+  valeurDuBoutton(value: string): void {
     switch (value) {
       case "Alpha":
-        this.countAlpha === 2 ? this.countAlpha = 0 : this.countAlpha ++;
-        this.countArrosage = 0;
-        this.countEnsoleillement = 0;
-        this.triAlpha(this.countAlpha)
+        this.countAlpha = (this.countAlpha + 1) % 3;
+        this.triAlpha();
         break;
       case "Arrosage":
-        this.countArrosage === 2 ? this.countArrosage = 0 : this.countArrosage ++;
-        this.countAlpha = 0;
-        this.countEnsoleillement = 0;
-        this.triArrosage(this.countArrosage)
+        this.countArrosage = (this.countArrosage + 1) % 3;
+        this.triArrosage();
         break;
       case "Ensoleillement":
-        this.countEnsoleillement === 2 ? this.countEnsoleillement = 0 : this.countEnsoleillement++
-        this.countAlpha = 0;
-        this.countArrosage = 0;
-        this.triEnsoleillement(this.countEnsoleillement)
+        this.countEnsoleillement = (this.countEnsoleillement + 1) % 3;
+        this.triEnsoleillement();
         break;
-    
       default:
-        console.log("default dans le switch");       
+        console.log("default dans le switch");
         break;
     }
+  }
+  triEnsoleillement(): void {
+    if (this.countEnsoleillement === 0) {
+        this.plantsToDisplayFilter = [...this.originalPlants];
+        this.updateFilteredList();
+        return;
+    }
+    
+    const order = ['peu', 'moyen', 'beaucoup']; // ordre d'ensoleillement
+    const compareFuncs = [
+      (a: Plant, b: Plant) => 0, // état initial, pas de tri
+      (a: Plant, b: Plant) => order.indexOf(a.soleil) - order.indexOf(b.soleil), // croissant
+      (a: Plant, b: Plant) => order.indexOf(b.soleil) - order.indexOf(a.soleil)  // décroissant
+    ];
+
+    this.plantsToDisplayFilter = this.sortArray(this.plantsToDisplayFilter, compareFuncs[this.countEnsoleillement]);
   }
 
 }
