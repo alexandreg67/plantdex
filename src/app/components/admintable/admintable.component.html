@@ -30,8 +30,13 @@
 
             <th>Catégories</th>
 
-            <th>Actions</th>
+            <th>Arrosage</th>
 
+            <th>Soleil</th>
+
+            <th class="wrap-text">Image</th>
+            
+            <th>Action</th>
         </tr>
 
     </thead>
@@ -47,7 +52,6 @@
                 {{!isEditing ? ligne.nom : ''}}
 
             </td>
-
             <td>
 
                 <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.categorie" type="text">
@@ -58,12 +62,34 @@
 
             <td>
 
+                <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.arrosage" type="text">
+
+                {{!isEditing ? ligne.arrosage : ''}}
+
+            </td>
+            <td>
+
+                <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.soleil" type="text">
+
+                {{!isEditing ? ligne.soleil : ''}}
+
+            </td>
+            <td>
+
+                <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.image" type="text">
+
+                {{!isEditing ? ligne.image : ''}}
+
+            </td>
+
+            <td>
+
                 <button class="edit-btn" (click)="editerLigne(ligne.id)">Editer</button>
 
                 <button class="delete-btn" (click)="supprimerLigne(ligne.id, i)">Supprimer</button>
 
                 <button class="confirm-btn" *ngIf="isEditing"
-                    (click)="confirmerChangements(i, ligne.nom, ligne.categorie)">Confirmer</button>
+                    (click)="confirmerChangements(ligne.id, ligne.nom, ligne.categorie, ligne.arrosage, ligne.soleil, ligne.image)">Confirmer</button>
 
             </td>
 

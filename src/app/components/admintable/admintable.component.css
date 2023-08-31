@@ -128,3 +128,9 @@
     color: #fff;
 
 }
+
+.wrap-text {
+    word-wrap: break-word;
+    max-width: 10px;
+    /* Ou la largeur maximale souhaitée */
+}

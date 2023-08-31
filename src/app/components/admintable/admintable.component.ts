@@ -34,8 +34,22 @@ ngOnInit() {
         })
     }
 
-    confirmerChangements(index: number, nom: string, categorie: string) {
+    confirmerChangements(id:number, newnom: string, newcategorie: string, newarrosage:number, newsoleil:string, newimage:string) {
         // this.lignes[index] = {nom, categorie};
+        // console.log(id, nom, categorie, arrosage, soleil, image);
+        const newPlant: Plant = {
+          id: id,
+          nom: newnom,
+          categorie: newcategorie,
+          arrosage: newarrosage,
+          soleil: newsoleil,
+          image: newimage,
+          favoris: true
+        }
+        this.plantsService.updatePlant(id, newPlant).subscribe(() => {
+          console.log("mise à jour effectué");
+          
+        })
         this.isEditing = false;
     }
 }

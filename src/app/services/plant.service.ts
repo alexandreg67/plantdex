@@ -24,4 +24,10 @@ export class PlantService {
     return this.http.delete<void>(url);
   }
 
+  updatePlant(plantId: number, updatedPlant: Plant): Observable<Plant> {
+    console.log(updatedPlant);
+    const url = `http://localhost:3000/api/plants/${plantId}`;
+    return this.http.put<Plant>(url, updatedPlant);
+  }
+
 }
