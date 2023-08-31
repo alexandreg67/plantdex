@@ -15,6 +15,7 @@ import { FilterBarComponent } from './components/filter-bar/filter-bar.component
 import { FormsModule } from '@angular/forms';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { GroupButtonComponent } from './components/group-button/group-button.component';
+import { AdmintableComponent } from './components/admintable/admintable.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { GroupButtonComponent } from './components/group-button/group-button.com
     CardComponent,
     FilterBarComponent,
     SearchBarComponent,
-    GroupButtonComponent
+    GroupButtonComponent,
+    AdmintableComponent
   ],
   imports: [
     BrowserModule,

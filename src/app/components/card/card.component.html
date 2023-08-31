@@ -1,10 +1,10 @@
-<div *ngIf="planteAEnvoyer" class="card mb-2" style="width: 18rem;height: 520px;">
+<div *ngIf="planteAEnvoyer" class="card mb-2" style="width: 18rem;height: 520px;" (click)="vueDetails(planteAEnvoyer.id)">
     <div class="container-img">
         <img class="card-img-top card-img" src='{{ planteAEnvoyer.image }}' alt="Card image cap">
         <i  *ngIf="planteAEnvoyer.favoris === false" class="bi bi-heart icon-favoris" (click)="ajouterAuxFavoris(planteAEnvoyer)"></i>
         <i *ngIf="planteAEnvoyer.favoris === true" class="bi bi-heart-fill icon-favoris" (click)="ajouterAuxFavoris(planteAEnvoyer)"></i>
     </div>
-    <div class="card-body">
+    <div class="card-body" >
         <h5 class="card-title">{{ planteAEnvoyer.nom }}</h5>
         <p class="card-text">{{ planteAEnvoyer.categorie }}</p>
         

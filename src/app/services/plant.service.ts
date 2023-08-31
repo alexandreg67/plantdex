@@ -11,10 +11,17 @@ export class PlantService {
 
   constructor(private http: HttpClient) { }
 
-  getPlants() : any {
-    const response = this.http.get<InterfacePlant>("http://localhost:3000/api/plants").pipe(map(e => e.data))
-        
-    return response
+  getPlants(){
+    return this.http.get<InterfacePlant>("http://localhost:3000/api/plants").pipe(map(e => e.data))
   };
+
+  getPlantById(id: number) {
+    return this.http.get<InterfacePlant>(`http://localhost:3000/api/plants/${id}`).pipe(map(e => e.data));
+  }
+
+  deletePlant(plantId: number): Observable<void> {
+    const url = `http://localhost:3000/api/plants/${plantId}`;
+    return this.http.delete<void>(url);
+  }
 
 }

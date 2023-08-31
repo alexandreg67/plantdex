@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Plant } from 'src/app/models/plant';
+import { PlantService } from 'src/app/services/plant.service';
 
 @Component({
   selector: 'app-card',
@@ -11,13 +12,17 @@ export class CardComponent  {
   @ViewChild('myModal') myModal!: ElementRef
 
   plantId!:number;
+  plant!: any;
   plantName!:string;
 
   @Input() 
   planteAEnvoyer!:Plant;
 
+  constructor(private plantService: PlantService) { }
+
+
   ngAfterViewInit(): void {
-  console.log("viewChild", this.myModal);
+  // console.log("viewChild", this.myModal);
     
   }
   ajouterAuxFavoris(plant: Plant) {
@@ -36,6 +41,14 @@ export class CardComponent  {
     this.myModal.nativeElement.style.display = "none";
   }
 
+  vueDetails(id: number) {
+    return this.plantService.getPlantById(id).subscribe(
+      plantData => {
+        console.log(plantData);
+        this.plant = plantData
+      }
+    )
+  }
 
 }
 

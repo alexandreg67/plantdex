@@ -1,0 +1,74 @@
+<!-- <table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Catégories</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ligne of lignes; let i = index">
+            <td><input *ngIf="isEditing" [(ngModel)]="ligne.nom" type="text">{{!isEditing ? ligne.nom : ''}}</td>
+            <td><input *ngIf="isEditing" [(ngModel)]="ligne.categorie" type="text">{{!isEditing ? ligne.categorie : ''
+            }}
+            <td>
+                <button (click)="editerLigne(i)">Editer</button>
+                <button (click)="supprimerLigne(i)">Supprimer</button>
+                <button *ngIf="isEditing" (click)="confirmerChangements(i, ligne.nom, ligne.categorie)">Confirmer</button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+
+<table class="modern-table">
+
+    <thead>
+
+        <tr>
+
+            <th>Nom</th>
+
+            <th>Catégories</th>
+
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor="let ligne of lignes; let i = index">
+
+            <td>
+
+                <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.nom" type="text">
+
+                {{!isEditing ? ligne.nom : ''}}
+
+            </td>
+
+            <td>
+
+                <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.categorie" type="text">
+
+                {{!isEditing ? ligne.categorie : ''}}
+
+            </td>
+
+            <td>
+
+                <button class="edit-btn" (click)="editerLigne(ligne.id)">Editer</button>
+
+                <button class="delete-btn" (click)="supprimerLigne(ligne.id, i)">Supprimer</button>
+
+                <button class="confirm-btn" *ngIf="isEditing"
+                    (click)="confirmerChangements(i, ligne.nom, ligne.categorie)">Confirmer</button>
+
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>
