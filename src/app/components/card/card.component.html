@@ -1,4 +1,4 @@
-<div *ngIf="planteAEnvoyer" class="card mb-2" style="width: 18rem;height: 520px;" (click)="vueDetails(planteAEnvoyer.id)">
+<div *ngIf="planteAEnvoyer" class="card mb-2" style="width: 18rem;height: 520px;" (click)="vueDetails(planteAEnvoyer)"  >
     <div class="container-img">
         <img class="card-img-top card-img" src='{{ planteAEnvoyer.image }}' alt="Card image cap">
         <i  *ngIf="planteAEnvoyer.favoris === false" class="bi bi-heart icon-favoris" (click)="ajouterAuxFavoris(planteAEnvoyer)"></i>
@@ -41,6 +41,23 @@
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" (click)="closeModal()">Retour</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" #detailsModal>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2> {{ detailsName }}</h2>
+                <img [src]="detailsImage" alt="image de la plante" style="width: 50%;">
+                <h3> {{ detailsCategorie }}</h3>
+                <p>Besoin en eau : {{ detailsArrosage }}/3</p>
+                <p>Besoin en soleil : {{ detailsSoleil }}</p>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" (click)="closeDetailsModal()">Retour</button>
             </div>
         </div>
     </div>

@@ -12,10 +12,12 @@ import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 import { PlantListComponent } from './components/plant-list/plant-list.component';
 import { CardComponent } from './components/card/card.component';
 import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { GroupButtonComponent } from './components/group-button/group-button.component';
 import { AdmintableComponent } from './components/admintable/admintable.component';
+import { PageAddPlantComponent } from './pages/page-add-plant/page-add-plant.component';
+import { PlantformComponent } from './components/plantform/plantform.component';
 
 
 @NgModule({
@@ -31,13 +33,16 @@ import { AdmintableComponent } from './components/admintable/admintable.componen
     FilterBarComponent,
     SearchBarComponent,
     GroupButtonComponent,
-    AdmintableComponent
+    AdmintableComponent,
+    PageAddPlantComponent,
+    PlantformComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

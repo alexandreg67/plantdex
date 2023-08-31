@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Plant } from 'src/app/models/plant';
 import { PlantService } from 'src/app/services/plant.service';
 
@@ -9,16 +10,22 @@ import { PlantService } from 'src/app/services/plant.service';
 })
 export class CardComponent  {
 
-  @ViewChild('myModal') myModal!: ElementRef
+  @ViewChild('myModal') myModal!: ElementRef;
+  @ViewChild('detailsModal') detailsModal!: ElementRef;
 
   plantId!:number;
   plant!: any;
   plantName!:string;
+  detailsName!: string;
+  detailsCategorie!: string;
+  detailsSoleil!: string;
+  detailsArrosage!:number;
+  detailsImage!: string;
 
   @Input() 
   planteAEnvoyer!:Plant;
 
-  constructor(private plantService: PlantService) { }
+  constructor(private plantService: PlantService, private router: Router) { }
 
 
   ngAfterViewInit(): void {
@@ -41,13 +48,24 @@ export class CardComponent  {
     this.myModal.nativeElement.style.display = "none";
   }
 
-  vueDetails(id: number) {
-    return this.plantService.getPlantById(id).subscribe(
-      plantData => {
-        console.log(plantData);
-        this.plant = plantData
-      }
-    )
+  closeDetailsModal(): void {
+    this.detailsModal.nativeElement.style.display = "none";
+
+  }
+
+  vueDetails(plant: Plant) {
+      this.detailsModal.nativeElement.style.display = "block";
+      this.detailsName = plant.nom;
+      this.detailsCategorie = plant.categorie;
+      this.detailsSoleil = plant.soleil;
+      this.detailsArrosage = plant.arrosage;
+      this.detailsImage = plant.image;
+    // return this.plantService.getPlantById(id).subscribe(
+    //   plantData => {
+    //     console.log(plantData);
+    //     this.plant = plantData
+    //   }
+    // )
   }
 
 }

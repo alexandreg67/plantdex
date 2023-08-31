@@ -1,0 +1,47 @@
+<div class="container formulaire">
+    <h2>Ajouter une nouvelle plante.</h2>
+    <form [formGroup]="plantForm" (ngSubmit)="submit()">
+    
+        <div class="form-group">
+            <label for="plantNom" class="form-label">Nom</label>
+            <input type="text" class="form-control" formControlName="nom" id="plantNom" placeholder="nom">
+        </div>
+        <div class="form-group">
+            <label for="categorie">Catégorie</label>
+            <select class="form-select" id="categorie" aria-label="Default select example" formControlName="categorie">
+                <option value="bonsaïs">bonsaïs</option>
+                <option value="cactus et plantes grasses">cactus et plantes grasses</option>
+                <option value="orchidés">orchidés</option>
+                <option value="palmiers d'intérieur">palmiers d'intérieur</option>
+                <option value="plantes vertes">plantes vertes</option>
+                <option value="plantes fleuries">plantes fleuries</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="soleil">Soleil</label>
+            <select class="form-select" id="soleil" aria-label="Default select example" formControlName="soleil">
+                <option value="peu">Peu</option>
+                <option value="moyen">Moyen</option>
+                <option value="beaucoup">Beaucoup</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="arrosage">Arrosage</label>
+            <select class="form-select" id="arrosage" aria-label="Default select example" formControlName="arrosage">
+                <option value=0>0</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="image" class="form-label">Image</label>
+            <input type="text" class="form-control" formControlName="image" id="image" placeholder="url de l'image">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">Ajouter</button>
+        </div>
+    
+    </form>
+</div>

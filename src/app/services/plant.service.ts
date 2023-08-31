@@ -30,4 +30,9 @@ export class PlantService {
     return this.http.put<Plant>(url, updatedPlant);
   }
 
+  createPlant(newPlant: Plant): Observable<any> {
+    const url = `http://localhost:3000/api/plants/`;
+    return this.http.post(url, newPlant);
+  }
+
 }
