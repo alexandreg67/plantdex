@@ -1,100 +1,72 @@
-<!-- <table>
-    <thead>
-        <tr>
-            <th>Nom</th>
-            <th>Catégories</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let ligne of lignes; let i = index">
-            <td><input *ngIf="isEditing" [(ngModel)]="ligne.nom" type="text">{{!isEditing ? ligne.nom : ''}}</td>
-            <td><input *ngIf="isEditing" [(ngModel)]="ligne.categorie" type="text">{{!isEditing ? ligne.categorie : ''
-            }}
-            <td>
-                <button (click)="editerLigne(i)">Editer</button>
-                <button (click)="supprimerLigne(i)">Supprimer</button>
-                <button *ngIf="isEditing" (click)="confirmerChangements(i, ligne.nom, ligne.categorie)">Confirmer</button>
-            </td>
-        </tr>
-    </tbody>
-</table> -->
+<div class="admin">
 
-<table class="modern-table">
+    <button type="button" class="btn btn-outline-success addbtn" [routerLink]="['add-plant']">Ajouter une
+        plante</button>
 
-    <thead>
 
-        <tr>
 
-            <th>Nom</th>
+    <table class="modern-table">
+        <thead>
+            <tr>
+                <th>Nom</th>
 
-            <th>Catégories</th>
+                <th>Catégories</th>
 
-            <th>Arrosage</th>
+                <th>Arrosage</th>
 
-            <th>Soleil</th>
+                <th>Soleil</th>
 
-            <th class="wrap-text">Image</th>
-            
-            <th>Action</th>
-        </tr>
+                <th>Image</th>
 
-    </thead>
+                <th>Actions</th>
+            </tr>
+        </thead>
 
-    <tbody>
+        <tbody>
+            <tr *ngFor="let ligne of lignes; let i = index">
+                <td>
+                    <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.nom" type="text" />
 
-        <tr *ngFor="let ligne of lignes; let i = index">
+                    {{ !isEditing ? ligne.nom : "" }}
+                </td>
 
-            <td>
+                <td>
+                    <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.categorie" type="text" />
 
-                <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.nom" type="text">
+                    {{ !isEditing ? ligne.categorie : "" }}
+                </td>
 
-                {{!isEditing ? ligne.nom : ''}}
+                <td>
+                    <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.arrosage" type="text" />
 
-            </td>
-            <td>
+                    {{ !isEditing ? ligne.arrosage : "" }}
+                </td>
 
-                <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.categorie" type="text">
+                <td>
+                    <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.soleil" type="text" />
 
-                {{!isEditing ? ligne.categorie : ''}}
+                    {{ !isEditing ? ligne.soleil : "" }}
+                </td>
 
-            </td>
+                <td>
+                    <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.image" type="text" />
 
-            <td>
+                    {{ !isEditing ? ligne.image : "" }}
+                </td>
 
-                <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.arrosage" type="text">
+                <td>
+                    <button class="edit-btn" (click)="editerLigne(ligne.id)">Editer</button>
 
-                {{!isEditing ? ligne.arrosage : ''}}
+                    <button class="delete-btn" (click)="supprimerLigne(ligne.id, i)">
+                        Supprimer
+                    </button>
 
-            </td>
-            <td>
-
-                <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.soleil" type="text">
-
-                {{!isEditing ? ligne.soleil : ''}}
-
-            </td>
-            <td>
-
-                <input class="input-field" *ngIf="isEditing" [(ngModel)]="ligne.image" type="text">
-
-                {{!isEditing ? ligne.image : ''}}
-
-            </td>
-
-            <td>
-
-                <button class="edit-btn" (click)="editerLigne(ligne.id)">Editer</button>
-
-                <button class="delete-btn" (click)="supprimerLigne(ligne.id, i)">Supprimer</button>
-
-                <button class="confirm-btn" *ngIf="isEditing"
-                    (click)="confirmerChangements(ligne.id, ligne.nom, ligne.categorie, ligne.arrosage, ligne.soleil, ligne.image)">Confirmer</button>
-
-            </td>
-
-        </tr>
-
-    </tbody>
-
-</table>
+                    <button class="confirm-btn" *ngIf="isEditing"
+                        (click)="confirmerChangements(ligne.id, ligne.nom, ligne.categorie, ligne.arrosage, ligne.soleil, ligne.image)">
+                        Confirmer
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

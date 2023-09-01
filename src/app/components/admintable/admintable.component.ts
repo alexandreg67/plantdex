@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Ligne } from '../../models/ligne.interface';
 import { Plant } from 'src/app/models/plant';
 import { PlantService } from '../../services/plant.service';
 

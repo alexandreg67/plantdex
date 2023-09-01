@@ -5,11 +5,15 @@ import { PageMyPlantsComponent } from './pages/page-my-plants/page-my-plants.com
 import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PageAddPlantComponent } from './pages/page-add-plant/page-add-plant.component';
+import { PageConnectComponent } from './pages/page-connect/page-connect.component';
+import { PageSubscribeComponent } from './pages/page-subscribe/page-subscribe.component';
 
 const routes: Routes = [
   { path: "", redirectTo: 'home', pathMatch: 'full' },
+  { path: "login", component: PageConnectComponent },
+  { path: "login/subscribe", component: PageSubscribeComponent },
   { path: "home", component: PageHomeComponent },
-  { path: "add-plant", component: PageAddPlantComponent },
+  { path: "admin/add-plant", component: PageAddPlantComponent },
   { path: "my-plants", component: PageMyPlantsComponent },
   { path: "admin", component: PageAdminComponent},
   { path: "**", component: PageNotFoundComponent}

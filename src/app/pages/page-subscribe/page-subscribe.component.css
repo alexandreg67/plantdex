@@ -1,0 +1,13 @@
+.formulaire {
+    width: 40%;
+    padding: 40px;
+    margin: 120px auto 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.group-btn {
+    display: flex;
+    justify-content: space-between;
+}

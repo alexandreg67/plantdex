@@ -18,6 +18,8 @@ import { GroupButtonComponent } from './components/group-button/group-button.com
 import { AdmintableComponent } from './components/admintable/admintable.component';
 import { PageAddPlantComponent } from './pages/page-add-plant/page-add-plant.component';
 import { PlantformComponent } from './components/plantform/plantform.component';
+import { PageConnectComponent } from './pages/page-connect/page-connect.component';
+import { PageSubscribeComponent } from './pages/page-subscribe/page-subscribe.component';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import { PlantformComponent } from './components/plantform/plantform.component';
     AdmintableComponent,
     PageAddPlantComponent,
     PlantformComponent,
+    PageConnectComponent,
+    PageSubscribeComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,29 +1,43 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Plant } from 'src/app/models/plant';
+import { Component, Input } from '@angular/core';
 import { PlantService } from 'src/app/services/plant.service';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Plant } from 'src/app/models/plant';
+ 
+ 
 @Component({
+ 
   selector: 'app-plantform',
+ 
   templateUrl: './plantform.component.html',
+ 
   styleUrls: ['./plantform.component.css']
+ 
 })
+ 
 export class PlantformComponent {
-
-  constructor (private formBuilder: FormBuilder, private plantservice: PlantService) {}
-
+imageChoice: string = 'url'; // valeur par défaut
+ 
+@Input() categories!: string[]
+  constructor(private formBuilder: FormBuilder, private plantService: PlantService) {}
+ 
   plantForm: FormGroup = this.formBuilder.group({
-    nom: [''],
-    soleil: [''],
-    arrosage: [0],
-    image: [''],
-    categorie: ['']
+ 
+    nom: ['', [Validators.required ]],
+ 
+    categorie: ['', [Validators.required]],
+ 
+    soleil: ['', [Validators.required]],
+ 
+    arrosage: [0, [Validators.required]],
+ 
+    image: ['', [Validators.required]]
+ 
   });
 
 
   submit() {
     const newPlant: Plant = this.plantForm.value;
-    this.plantservice.createPlant(newPlant).subscribe(() => {
+    this.plantService.createPlant(newPlant).subscribe(() => {
           console.log("mise à jour effectué");
           
         })
