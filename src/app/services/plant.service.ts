@@ -32,7 +32,7 @@ export class PlantService {
 
   createPlant(newPlant: Plant): Observable<any> {
     const url = `http://localhost:3000/api/plants/`;
-    return this.http.post(url, newPlant);
+    return this.http.post(url, newPlant, {headers : { 'Authorization': `Bearer`}});
   }
 
 }

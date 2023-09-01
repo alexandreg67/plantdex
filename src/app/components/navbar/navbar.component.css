@@ -7,3 +7,14 @@ b {
     color: green;
 }
 
+.logo-connexion {
+    width: 30px;
+    /* Largeur de l'image */
+    transition: transform 0.3s ease-in-out;
+    /* Transition en douceur */
+}
+
+.logo-link:hover .logo-connexion {
+    transform: scale(1.5);
+    /* Grossissement de 50% au survol */
+}
