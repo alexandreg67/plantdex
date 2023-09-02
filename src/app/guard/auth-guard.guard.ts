@@ -25,7 +25,7 @@ export class AuthGuard implements CanActivate {
 
     return this.authService.validateToken(token, userEmail).pipe( // On valide le token
       map(response => { 
-        console.log('je suis dans le guard et la reponse du serveur : ', response);
+        console.log('je suis dans le guard et la reponse du service : ', response);
         if (response.isValid) { // Si le token est valide
           console.log('je suis dans le guard et le token est valide');          
           return true;
