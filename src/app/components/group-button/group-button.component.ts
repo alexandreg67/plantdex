@@ -7,8 +7,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class GroupButtonComponent {
 
-  @Input() countAlpha!:number;
-  @Input() countArrosage!:number;
+  @Input() countAlpha!:number; 
+  @Input() countArrosage!:number; 
   @Input() countEnsoleillement!:number;
 
   @Output() etatDuBoutton = new EventEmitter<string>()

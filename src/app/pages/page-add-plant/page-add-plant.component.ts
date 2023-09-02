@@ -13,8 +13,8 @@ export class PageAddPlantComponent {
  
  constructor( private plantService: PlantService){}
  ngOnInit(): void {
-    this.plantService.getPlants().subscribe((data: Plant[]) => {
-      this.plantsToDisplay = data;
-      this.categories = [... new Set(this.plantsToDisplay.map(e => e.categorie))];
+    this.plantService.getPlants().subscribe((data: Plant[]) => { // On récupère les plantes
+      this.plantsToDisplay = data; // On stocke les plantes dans une variable
+      this.categories = [... new Set(this.plantsToDisplay.map(e => e.categorie))]; // On récupère les catégories des plantes
     });
 }}

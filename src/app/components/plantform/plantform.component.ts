@@ -35,15 +35,15 @@ imageChoice: string = 'url'; // valeur par défaut
   });
 
 
-  submit() {
-    const newPlant: Plant = this.plantForm.value;
-    this.plantService.createPlant(newPlant).subscribe(() => {
+  submit() { // Envoi du formulaire de création d'une nouvelle plante
+    const newPlant: Plant = this.plantForm.value; // On récupère les données du formulaire
+    this.plantService.createPlant(newPlant).subscribe(() => { 
           console.log("mise à jour effectué");
           
         })
 
     console.log("submit form plant", this.plantForm.value);
-    this.plantForm.reset();
+    this.plantForm.reset(); // On vide le formulaire
     
   }
 }

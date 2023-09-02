@@ -8,11 +8,11 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './page-subscribe.component.html',
   styleUrls: ['./page-subscribe.component.css']
 })
-export class PageSubscribeComponent {
+export class PageSubscribeComponent { // Création d'un nouvel utilisateur
 
   constructor(private formBuilder: FormBuilder, private userService: UserService) {}
 
-    submitForm: FormGroup = this.formBuilder.group({
+    submitForm: FormGroup = this.formBuilder.group({ // Création du formulaire de création d'un nouvel utilisateur
  
     nom: ['', [Validators.required ]],
  
@@ -26,15 +26,18 @@ export class PageSubscribeComponent {
   });
 
 
-  submit() {
-    const newUser: User = this.submitForm.value;
-    this.userService.createUser(newUser).subscribe(() => {
+  submit() { // Envoi du formulaire de création d'un nouvel utilisateur
+    const newUser: User = this.submitForm.value; // On récupère les données du formulaire
+    console.log( "je suis dans le submit, newUser = ", newUser);
+    this.userService.createUser(newUser).subscribe(() => { // On envoie les données du formulaire au serveur
           console.log("mise à jour effectué");
         })
 
-    console.log("submit form user", this.submitForm.value);
-    this.submitForm.reset();
+    this.submitForm.reset(); // On vide le formulaire
     
+  }
+  annuler() {; 
+    window.history.back(); // On retourne à la page précédente
   }
   
 }

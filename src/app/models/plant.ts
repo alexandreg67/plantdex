@@ -1,4 +1,4 @@
-export interface Plant {
+export interface Plant { // On définit l'interface Plant
     id: number;
     nom: string;
     soleil: string;

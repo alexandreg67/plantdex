@@ -23,7 +23,7 @@ ngOnInit() {
   }
 
     editerLigne(index: number) {
-        this.isEditing = !this.isEditing;
+        this.isEditing = !this.isEditing; // On active le mode édition
     }
 
     supprimerLigne(id: number, index: number) {
@@ -34,8 +34,7 @@ ngOnInit() {
     }
 
     confirmerChangements(id:number, newnom: string, newcategorie: string, newarrosage:number, newsoleil:string, newimage:string) {
-        // this.lignes[index] = {nom, categorie};
-        // console.log(id, nom, categorie, arrosage, soleil, image);
+        console.log("je suis dans confirmer changements et j'ai id, newnom, newcategorie, newarrosage, newsoleil, newimage", id, newnom, newcategorie, newarrosage, newsoleil, newimage);
         const newPlant: Plant = {
           id: id,
           nom: newnom,
@@ -45,10 +44,10 @@ ngOnInit() {
           image: newimage,
           favoris: true
         }
-        this.plantsService.updatePlant(id, newPlant).subscribe(() => {
+        this.plantsService.updatePlant(id, newPlant).subscribe(() => { // On envoie les données du formulaire au serveur
           console.log("mise à jour effectué");
           
         })
-        this.isEditing = false;
+        this.isEditing = false; // On désactive le mode édition
     }
 }

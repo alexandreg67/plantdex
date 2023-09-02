@@ -32,7 +32,7 @@ export class CardComponent  {
   // console.log("viewChild", this.myModal);
     
   }
-  ajouterAuxFavoris(plant: Plant) {
+  ajouterAuxFavoris(plant: Plant) { 
     console.log("plant", this.planteAEnvoyer);
     this.plantId = plant.id;
     this.plantName = plant.nom;
@@ -49,23 +49,18 @@ export class CardComponent  {
   }
 
   closeDetailsModal(): void {
-    this.detailsModal.nativeElement.style.display = "none";
+    this.detailsModal.nativeElement.style.display = "none"; // On cache la modal des détails
 
   }
 
-  vueDetails(plant: Plant) {
-      this.detailsModal.nativeElement.style.display = "block";
+  vueDetails(plant: Plant) { // On récupère les données de la plante
+      this.detailsModal.nativeElement.style.display = "block"; // On affiche la modal des détails
       this.detailsName = plant.nom;
       this.detailsCategorie = plant.categorie;
       this.detailsSoleil = plant.soleil;
       this.detailsArrosage = plant.arrosage;
       this.detailsImage = plant.image;
-    // return this.plantService.getPlantById(id).subscribe(
-    //   plantData => {
-    //     console.log(plantData);
-    //     this.plant = plantData
-    //   }
-    // )
+
   }
 
 }

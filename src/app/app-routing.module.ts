@@ -7,17 +7,22 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { PageAddPlantComponent } from './pages/page-add-plant/page-add-plant.component';
 import { PageConnectComponent } from './pages/page-connect/page-connect.component';
 import { PageSubscribeComponent } from './pages/page-subscribe/page-subscribe.component';
+import { AuthGuard } from '../app/guard/auth-guard.guard';
 
 const routes: Routes = [
   { path: "", redirectTo: 'home', pathMatch: 'full' },
+  { path: "home", component: PageHomeComponent},
   { path: "login", component: PageConnectComponent },
   { path: "login/subscribe", component: PageSubscribeComponent },
-  { path: "home", component: PageHomeComponent },
-  { path: "admin/add-plant", component: PageAddPlantComponent },
   { path: "my-plants", component: PageMyPlantsComponent },
-  { path: "admin", component: PageAdminComponent},
+  { path: 'admin',
+    canActivate: [AuthGuard],
+    children: [ // On définit les routes enfants
+        { path: "", component: PageAdminComponent, canActivate: [AuthGuard] }, 
+        { path: "add-plant", component: PageAddPlantComponent, canActivate: [AuthGuard] },
+    ] },
   { path: "**", component: PageNotFoundComponent}
-];
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

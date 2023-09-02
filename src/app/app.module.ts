@@ -20,6 +20,7 @@ import { PageAddPlantComponent } from './pages/page-add-plant/page-add-plant.com
 import { PlantformComponent } from './components/plantform/plantform.component';
 import { PageConnectComponent } from './pages/page-connect/page-connect.component';
 import { PageSubscribeComponent } from './pages/page-subscribe/page-subscribe.component';
+import { AuthService } from './services/auth-gard.service';
 
 
 @NgModule({
@@ -48,7 +49,7 @@ import { PageSubscribeComponent } from './pages/page-subscribe/page-subscribe.co
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
