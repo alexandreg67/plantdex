@@ -18,4 +18,8 @@ export class FavorisService {
   getFavoritesForUser(userId: number): Observable<number[]> {
     return this.http.get<number[]>(`${this.url}/${userId}`);
   }
+
+  deleteFavorite(userId: number, plantId: number): Observable<any> {
+    return this.http.delete(`${this.url}/${userId}/${plantId}`);
+  }
 }

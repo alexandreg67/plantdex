@@ -4,7 +4,7 @@
         <i *ngIf="!isFavorite(planteAEnvoyer.id)" class="bi bi-heart icon-favoris"
             (click)="ajouterAuxFavoris(planteAEnvoyer); $event.stopPropagation()"></i>
         <i *ngIf="isFavorite(planteAEnvoyer.id)" class="bi bi-heart-fill icon-favoris"
-            (click)="ajouterAuxFavoris(planteAEnvoyer); $event.stopPropagation()"></i>
+            (click)="retirerDesFavoris(planteAEnvoyer); $event.stopPropagation()"></i>
     </div>
     <div class="card-body" >
         <h5 class="card-title">{{ planteAEnvoyer.nom }}</h5>
@@ -38,7 +38,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <h4> {{ plantName }} a été ajouté à vos favoris </h4>
+                <img [src]="planteAEnvoyer.image" alt="image de la plante" style="width: 50%;">
+                <h4> {{ planteAEnvoyer.nom }} a été ajouté à vos favoris </h4>
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">

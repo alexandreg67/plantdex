@@ -1,9 +1,7 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { Plant } from 'src/app/models/plant';
 import { FavorisService } from 'src/app/services/favoris.service';
-import { PlantService } from 'src/app/services/plant.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -30,13 +28,11 @@ export class CardComponent  {
   planteAEnvoyer!:Plant;
 
   constructor(
-    private plantService: PlantService, 
-    private router: Router, 
     private userService: UserService, 
     private favorisService: FavorisService) { }
 
     ngOnInit(): void {
-      this.loadFavoris();
+      this.loadFavoris(); // On charge les favoris
     }
 
 
@@ -49,25 +45,28 @@ export class CardComponent  {
 
     const token = localStorage.getItem('token'); // On récupère le token dans le localStorage
 
-    if (!token) {
+    if (!token) { // Si le token n'existe pas
       console.log("Vous devez être connecté pour ajouter une plante aux favoris");
       return;
     }
 
-    this.userService.getIdUser(token).subscribe((response: any) => {
+    this.userService.getIdUser(token).subscribe((response: any) => { // On récupère l'id de l'utilisateur
       
       const userId = response;
       console.log("Je suis dans add favoris et je log userId : ", userId);
       console.log("Je suis dans add favoris et je log plant.id : ", plant.id);
       
       
-      this.favorisService.addFavorite(plant.id, userId).subscribe((response: any) => {
-        this.favoris.push(plant.id);
+      this.favorisService.addFavorite(plant.id, userId).subscribe((response: any) => { // On ajoute la plante aux favoris
+        this.favoris.push(plant.id); // On ajoute l'id de la plante dans le tableau des favoris
+        this.myModal.nativeElement.style.display = "block"; // On affiche la modal des favoris
         console.log(response.message);
       })
 
     }) 
   }
+
+  
 
   loadFavoris(): void {
     const token = localStorage.getItem('token'); // On récupère le token dans le localStorage
@@ -77,18 +76,33 @@ export class CardComponent  {
     }
 
     this.userService.getIdUser(token).pipe(
-      switchMap(userId => this.favorisService.getFavoritesForUser(userId))
+      switchMap(userId => this.favorisService.getFavoritesForUser(userId)) // On récupère les favoris de l'utilisateur
     ).subscribe(favorisId => {
       this.favoris = favorisId;
     });
 }
 
+  retirerDesFavoris(plant: Plant): void {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        console.log("Vous devez être connecté pour retirer des favoris");
+        return;
+      }
+      this.userService.getIdUser(token).subscribe((response: any) => {
+        const userId = response;
+        this.favorisService.deleteFavorite(userId, plant.id).subscribe((response: any) => {
+          console.log(response.message);
+          this.loadFavoris();
+        });
+      });
+  }
+
   isFavorite(plantId: number): boolean {
-    return this.favoris.includes(plantId);
+    return this.favoris.includes(plantId); // On vérifie si l'id de la plante est dans le tableau des favoris
 }
 
   closeModal(): void {
-    this.myModal.nativeElement.style.display = "none";
+    this.myModal.nativeElement.style.display = "none"; // On cache la modal des favoris
   }
 
   closeDetailsModal(): void {
