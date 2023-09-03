@@ -55,8 +55,14 @@ export class CardComponent  {
     }
 
     this.userService.getIdUser(token).subscribe((response: any) => {
-      const userId = response.userId;
+      
+      const userId = response;
+      console.log("Je suis dans add favoris et je log userId : ", userId);
+      console.log("Je suis dans add favoris et je log plant.id : ", plant.id);
+      
+      
       this.favorisService.addFavorite(plant.id, userId).subscribe((response: any) => {
+        this.favoris.push(plant.id);
         console.log(response.message);
       })
 

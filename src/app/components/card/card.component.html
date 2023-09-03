@@ -2,9 +2,9 @@
     <div class="container-img">
         <img class="card-img-top card-img" src='{{ planteAEnvoyer.image }}' alt="Card image cap">
         <i *ngIf="!isFavorite(planteAEnvoyer.id)" class="bi bi-heart icon-favoris"
-            (click)="ajouterAuxFavoris(planteAEnvoyer)"></i>
+            (click)="ajouterAuxFavoris(planteAEnvoyer); $event.stopPropagation()"></i>
         <i *ngIf="isFavorite(planteAEnvoyer.id)" class="bi bi-heart-fill icon-favoris"
-            (click)="ajouterAuxFavoris(planteAEnvoyer)"></i>
+            (click)="ajouterAuxFavoris(planteAEnvoyer); $event.stopPropagation()"></i>
     </div>
     <div class="card-body" >
         <h5 class="card-title">{{ planteAEnvoyer.nom }}</h5>
