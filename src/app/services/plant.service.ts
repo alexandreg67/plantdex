@@ -34,7 +34,7 @@ export class PlantService {
     console.log(newPlant);
     
     const url = `http://localhost:3000/api/plants/`;
-    return this.http.post(url, newPlant, {headers : { 'Authorization': `Bearer`}}); // On envoie le token dans le header de la requête
+    return this.http.post(url, newPlant, {headers : { 'Authorization': `Bearer ` }}); // On envoie le token dans le header de la requête
   }
 
 }

@@ -1,7 +1,10 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { switchMap } from 'rxjs';
 import { Plant } from 'src/app/models/plant';
+import { FavorisService } from 'src/app/services/favoris.service';
 import { PlantService } from 'src/app/services/plant.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-card',
@@ -21,11 +24,20 @@ export class CardComponent  {
   detailsSoleil!: string;
   detailsArrosage!:number;
   detailsImage!: string;
+  favoris: number[] = [];
 
   @Input() 
   planteAEnvoyer!:Plant;
 
-  constructor(private plantService: PlantService, private router: Router) { }
+  constructor(
+    private plantService: PlantService, 
+    private router: Router, 
+    private userService: UserService, 
+    private favorisService: FavorisService) { }
+
+    ngOnInit(): void {
+      this.loadFavoris();
+    }
 
 
   ngAfterViewInit(): void {
@@ -34,15 +46,40 @@ export class CardComponent  {
   }
   ajouterAuxFavoris(plant: Plant) { 
     console.log("plant", this.planteAEnvoyer);
-    this.plantId = plant.id;
-    this.plantName = plant.nom;
-    if (plant.favoris) {
-      plant.favoris = false;
-    }else {
-      this.myModal.nativeElement.style.display = "block";
-      plant.favoris = true;
+
+    const token = localStorage.getItem('token'); // On récupère le token dans le localStorage
+
+    if (!token) {
+      console.log("Vous devez être connecté pour ajouter une plante aux favoris");
+      return;
     }
+
+    this.userService.getIdUser(token).subscribe((response: any) => {
+      const userId = response.userId;
+      this.favorisService.addFavorite(plant.id, userId).subscribe((response: any) => {
+        console.log(response.message);
+      })
+
+    }) 
   }
+
+  loadFavoris(): void {
+    const token = localStorage.getItem('token'); // On récupère le token dans le localStorage
+    if (!token) {
+      console.log("Vous devez être connecté pour voir vos favoris");
+      return;
+    }
+
+    this.userService.getIdUser(token).pipe(
+      switchMap(userId => this.favorisService.getFavoritesForUser(userId))
+    ).subscribe(favorisId => {
+      this.favoris = favorisId;
+    });
+}
+
+  isFavorite(plantId: number): boolean {
+    return this.favoris.includes(plantId);
+}
 
   closeModal(): void {
     this.myModal.nativeElement.style.display = "none";

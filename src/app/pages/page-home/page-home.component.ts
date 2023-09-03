@@ -160,7 +160,7 @@ export class PageHomeComponent implements OnInit {
     }
   }
   triEnsoleillement(): void { // On trie les plantes par ordre d'ensoleillement
-    if (this.countEnsoleillement === 0) {
+    if (this.countEnsoleillement === 0) {// Si le compteur est à 0
         this.plantsToDisplayFilter = [...this.originalPlants];
         this.updateFilteredList();
         return;

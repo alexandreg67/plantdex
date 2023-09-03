@@ -27,7 +27,7 @@ export class AuthGuard implements CanActivate {
       map(response => { 
         console.log('je suis dans le guard et la reponse du service : ', response);
         if (response.isValid) { // Si le token est valide
-          console.log('je suis dans le guard et le token est valide');          
+          console.log('je suis dans le guard et le token est valide');  
           return true;
         }else { // Si le token n'est pas valide
           console.log('token invalide');
@@ -37,8 +37,7 @@ export class AuthGuard implements CanActivate {
       }),
       catchError(error => { // Si le token n'est pas valide
         console.error('Erreur lors de la validation du token:', error);
-        this.router.navigate(['/error'], { queryParams: { message: 'Token validation failed' } }); // On redirige vers la page d'erreur
-        // pour l'instant, il n'y a pas de page d'erreur
+        this.router.navigate(['/login'], { queryParams: { message: 'Token validation failed' } }); // On redirige vers la page de login
         return of(false);
       })
     );
