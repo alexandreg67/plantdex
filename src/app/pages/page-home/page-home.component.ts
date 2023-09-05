@@ -10,6 +10,7 @@ import { PlantService } from 'src/app/services/plant.service';
 export class PageHomeComponent implements OnInit {
 
   originalPlants: Plant[] = [];
+  favovisPlants: Plant[] = [];
 
   plantsToDisplay: Plant[] = [];
   plantsToDisplayFilter: Plant[] = [];

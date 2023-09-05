@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-page-connect',
@@ -23,22 +24,30 @@ export class PageConnectComponent {
 
 
   submit() { // Envoi du formulaire de connexion
-  const userLogin: User = this.loginForm.value; // On récupère les données du formulaire
-  console.log( "je suis dans le submit, userLogin = ", userLogin);
-  this.userService.loginUser(userLogin).subscribe((res) => { // On envoie les données du formulaire au serveur
-    console.log("connexion réussie");
-    const token = res.data; // On récupère le token
-    const userEmail = userLogin.email; // On récupère l'e-mail de l'utilisateur
+    const userLogin: User = this.loginForm.value; // On récupère les données du formulaire
+    console.log( "je suis dans le submit, userLogin = ", userLogin);
+    this.userService.loginUser(userLogin).subscribe((res) => { // On envoie les données du formulaire au serveur
+      console.log("connexion réussie");
+      const token = res.data; // On récupère le token
+      const userEmail = userLogin.email; // On récupère l'e-mail de l'utilisateur
 
-    // Stocker le token et l'e-mail dans le localStorage
-    localStorage.setItem('token', token);
-    localStorage.setItem('userEmail', userEmail);
+      // Stocker le token et l'e-mail dans le localStorage
+      localStorage.setItem('token', token);
+      localStorage.setItem('userEmail', userEmail);
 
-    console.log('Token:', token);
-    console.log('User Email:', userEmail);
+      console.log('Token:', token);
+      console.log('User Email:', userEmail);
 
-    this.loginForm.reset(); // On vide le formulaire
-  });
-}
+      this.loginForm.reset(); // On vide le formulaire
+      const modalElement = document.getElementById('loginModal'); // On récupère l'élément modal
+      const modalInstance = new bootstrap.Modal(modalElement!); // On crée l'instance modal
+      modalInstance.show(); // On cache la modal
+    });
+  }
+
+   goToAdmin() {
+    close();
+    window.location.href = '/admin';
+  }
 
 }

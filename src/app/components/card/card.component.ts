@@ -22,7 +22,9 @@ export class CardComponent  {
   detailsSoleil!: string;
   detailsArrosage!:number;
   detailsImage!: string;
+  
   favoris: number[] = [];
+  userId: number = 0;
 
   @Input() 
   planteAEnvoyer!:Plant;
@@ -31,9 +33,11 @@ export class CardComponent  {
     private userService: UserService, 
     private favorisService: FavorisService) { }
 
-    ngOnInit(): void {
-      this.loadFavoris(); // On charge les favoris
+  ngOnInit(): void {
+    if (localStorage.getItem('token')) {
+      this.loadFavoris(); // On charge les favoris 
     }
+  }
 
 
   ngAfterViewInit(): void {
@@ -54,19 +58,18 @@ export class CardComponent  {
       
       const userId = response;
       console.log("Je suis dans add favoris et je log userId : ", userId);
+      this.userId = userId;
       console.log("Je suis dans add favoris et je log plant.id : ", plant.id);
       
       
       this.favorisService.addFavorite(plant.id, userId).subscribe((response: any) => { // On ajoute la plante aux favoris
         this.favoris.push(plant.id); // On ajoute l'id de la plante dans le tableau des favoris
         this.myModal.nativeElement.style.display = "block"; // On affiche la modal des favoris
-        console.log(response.message);
       })
 
     }) 
-  }
 
-  
+  }
 
   loadFavoris(): void {
     const token = localStorage.getItem('token'); // On récupère le token dans le localStorage
@@ -74,24 +77,22 @@ export class CardComponent  {
       console.log("Vous devez être connecté pour voir vos favoris");
       return;
     }
-
     this.userService.getIdUser(token).pipe(
       switchMap(userId => this.favorisService.getFavoritesForUser(userId)) // On récupère les favoris de l'utilisateur
     ).subscribe(favorisId => {
-      this.favoris = favorisId;
+      this.favoris = favorisId; 
     });
 }
 
   retirerDesFavoris(plant: Plant): void {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem('token'); // On récupère le token dans le localStorage
       if (!token) {
         console.log("Vous devez être connecté pour retirer des favoris");
         return;
       }
-      this.userService.getIdUser(token).subscribe((response: any) => {
+      this.userService.getIdUser(token).subscribe((response: any) => { // On récupère l'id de l'utilisateur
         const userId = response;
         this.favorisService.deleteFavorite(userId, plant.id).subscribe((response: any) => {
-          console.log(response.message);
           this.loadFavoris();
         });
       });
@@ -119,6 +120,7 @@ export class CardComponent  {
       this.detailsImage = plant.image;
 
   }
+
 
 }
 

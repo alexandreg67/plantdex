@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as bootstrap from 'bootstrap';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -26,18 +27,28 @@ export class PageSubscribeComponent { // Création d'un nouvel utilisateur
   });
 
 
-  submit() { // Envoi du formulaire de création d'un nouvel utilisateur
+  submit() {
+    // Envoi du formulaire de création d'un nouvel utilisateur
     const newUser: User = this.submitForm.value; // On récupère les données du formulaire
-    console.log( "je suis dans le submit, newUser = ", newUser);
-    this.userService.createUser(newUser).subscribe(() => { // On envoie les données du formulaire au serveur
-          console.log("mise à jour effectué");
-        })
-
+    console.log('je suis dans le submit, newUser = ', newUser);
+    this.userService.createUser(newUser).subscribe(() => {
+      // On envoie les données du formulaire au serveur
+      console.log('mise à jour effectué');
+    });
+ 
     this.submitForm.reset(); // On vide le formulaire
-    
+ 
+    const modalElement = document.getElementById('subscribeModal');
+    const modalInstance = new bootstrap.Modal(modalElement!);
+    modalInstance.show();
   }
-  annuler() {; 
+  annuler() {
     window.history.back(); // On retourne à la page précédente
+  }
+
+  goToPlants() {
+    close();
+    window.location.href = 'login';
   }
   
 }

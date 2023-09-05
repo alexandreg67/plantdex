@@ -24,8 +24,9 @@
             </ul>
 
             <!-- Logo de connexion cliquable pour le routing -->
-            <a [routerLink]="['login']" class="logo-link">
-                <img src="/assets/login.png" alt="Logo de connexion" class="logo-connexion">
+            <a [routerLink]="isUserLoggedIn ? null : 'login'" (click)="isUserLoggedIn ? logout() : null" class="logo-link">
+                <img *ngIf="!isUserLoggedIn" src="/assets/login.png" alt="Logo de connexion" class="logo-connexion">
+                <img *ngIf="isUserLoggedIn" src="/assets/logout.png" alt="Logo de déconnexion" class="logo-connexion">
             </a>
         </div>
     </div>
